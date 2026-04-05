@@ -1,0 +1,123 @@
+{
+  "latency": 485.906,
+  "pgm_detail_rows": [],
+  "res_table": {
+    "col_type": [],
+    "rows": []
+  },
+  "tree": {
+    "Aggregate": {
+      "alias_key": "ci,k,mk,n,t",
+      "children": {
+        "Nested Loop [ci,k,mk,n,t]": {
+          "alias_key": "ci,k,mk,n,t",
+          "children": {
+            "Nested Loop [ci,k,mk,t]": {
+              "alias_key": "ci,k,mk,t",
+              "children": {
+                "Nested Loop [k,mk,t]": {
+                  "alias_key": "k,mk,t",
+                  "children": {
+                    "Nested Loop [k,mk]": {
+                      "alias_key": "k,mk",
+                      "children": {
+                        "Seq Scan [k]": {
+                          "alias_key": "k",
+                          "children": {},
+                          "time": 77093000
+                        },
+                        "Bitmap Heap Scan [mk]": {
+                          "alias_key": "mk",
+                          "children": {},
+                          "time": 10054000
+                        }
+                      },
+                      "time": 169500000
+                    },
+                    "Index Scan [t]": {
+                      "alias_key": "t",
+                      "children": {},
+                      "time": 8000
+                    }
+                  },
+                  "time": 480624000
+                },
+                "Index Scan [ci]": {
+                  "alias_key": "ci",
+                  "children": {},
+                  "time": 28000
+                }
+              },
+              "time": 481828000
+            },
+            "Index Scan [n]": {
+              "alias_key": "n",
+              "children": {},
+              "time": 10000
+            }
+          },
+          "time": 485736000
+        }
+      },
+      "time": 485768000
+    }
+  },
+  "cardinality_map": {
+    "ci,mk": {
+      "true_card": 215765477.0,
+      "est_card": 1515138813.25
+    },
+    "ci,n": {
+      "true_card": 486.0,
+      "est_card": 41.06
+    },
+    "ci,t": {
+      "true_card": 3099.0,
+      "est_card": 30330.51
+    },
+    "k,mk": {
+      "true_card": 35548.0,
+      "est_card": 282.61
+    },
+    "mk,t": {
+      "true_card": 1054.0,
+      "est_card": 3580.22
+    },
+    "ci,k,mk": {
+      "true_card": 1564305.0,
+      "est_card": 94649.87
+    },
+    "ci,mk,n": {
+      "true_card": 10066.0,
+      "est_card": 935.77
+    },
+    "ci,mk,t": {
+      "true_card": 13221.0,
+      "est_card": 1423726.68
+    },
+    "ci,n,t": {
+      "true_card": 3.0,
+      "est_card": 1.0
+    },
+    "k,mk,t": {
+      "true_card": 36.0,
+      "est_card": 1.0
+    },
+    "ci,k,mk,n": {
+      "true_card": 112.0,
+      "est_card": 1.0
+    },
+    "ci,k,mk,t": {
+      "true_card": 383.0,
+      "est_card": 87.08
+    },
+    "ci,mk,n,t": {
+      "true_card": 18.0,
+      "est_card": 1.0
+    },
+    "ci,k,mk,n,t": {
+      "true_card": 12.0,
+      "est_card": 1.0
+    }
+  }
+}

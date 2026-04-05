@@ -1,0 +1,88 @@
+{
+  "latency": 623.47,
+  "pgm_detail_rows": [],
+  "res_table": {
+    "col_type": [],
+    "rows": []
+  },
+  "tree": {
+    "Aggregate": {
+      "alias_key": "k,mi,mk,t",
+      "children": {
+        "Nested Loop [k,mi,mk,t]": {
+          "alias_key": "k,mi,mk,t",
+          "children": {
+            "Nested Loop [k,mk,t]": {
+              "alias_key": "k,mk,t",
+              "children": {
+                "Nested Loop [k,mk]": {
+                  "alias_key": "k,mk",
+                  "children": {
+                    "Seq Scan [k]": {
+                      "alias_key": "k",
+                      "children": {},
+                      "time": 48985000
+                    },
+                    "Bitmap Heap Scan [mk]": {
+                      "alias_key": "mk",
+                      "children": {},
+                      "time": 885000
+                    }
+                  },
+                  "time": 79744000
+                },
+                "Index Scan [t]": {
+                  "alias_key": "t",
+                  "children": {},
+                  "time": 8000
+                }
+              },
+              "time": 197892000
+            },
+            "Index Scan [mi]": {
+              "alias_key": "mi",
+              "children": {},
+              "time": 53000
+            }
+          },
+          "time": 621147000
+        }
+      },
+      "time": 623361000
+    }
+  },
+  "cardinality_map": {
+    "k,mk": {
+      "true_card": 12951.0,
+      "est_card": 1179.55
+    },
+    "mi,mk": {
+      "true_card": 4060930.0,
+      "est_card": 95877328.18
+    },
+    "mi,t": {
+      "true_card": 476405.0,
+      "est_card": 750757.08
+    },
+    "mk,t": {
+      "true_card": 2742670.0,
+      "est_card": 2646287.4
+    },
+    "k,mi,mk": {
+      "true_card": 12163.0,
+      "est_card": 24998.65
+    },
+    "k,mk,t": {
+      "true_card": 7874.0,
+      "est_card": 1239.13
+    },
+    "mi,mk,t": {
+      "true_card": 2265182.0,
+      "est_card": 78713565.44
+    },
+    "k,mi,mk,t": {
+      "true_card": 7250.0,
+      "est_card": 18428.92
+    }
+  }
+}

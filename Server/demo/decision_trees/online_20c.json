@@ -1,0 +1,2482 @@
+{
+  "model_id": "online_20c",
+  "model_name": "20c",
+  "description": "Online incremental training — snapshot after processing query 20c",
+  "training_samples": 304,
+  "trees": {
+    "name": {
+      "is_leaf": true,
+      "size": 3,
+      "mean": 0.4601,
+      "min": 0.3419,
+      "max": 0.649,
+      "variance": 0.0182,
+      "candidate_splits": [
+        {
+          "condition": "[Filter value] predicate n.gender = m",
+          "left_size": 1,
+          "right_size": 2,
+          "score": 0.3333
+        }
+      ]
+    },
+    "aka_name name": {
+      "is_leaf": true,
+      "size": 2,
+      "mean": 2.774,
+      "min": 1.2745,
+      "max": 4.2735,
+      "variance": 2.2484,
+      "candidate_splits": [
+        {
+          "condition": "[Join key] Join Key = an.person_id_n.id",
+          "left_size": 1,
+          "right_size": 1,
+          "score": 0.5
+        },
+        {
+          "condition": "[Join key] Join Key = _",
+          "left_size": 1,
+          "right_size": 1,
+          "score": 0.5
+        }
+      ]
+    },
+    "aka_name cast_info name": {
+      "is_leaf": true,
+      "size": 1,
+      "mean": 1.5153,
+      "min": 1.5153,
+      "max": 1.5153,
+      "variance": 0.0,
+      "candidate_splits": []
+    },
+    "aka_name cast_info name role_type": {
+      "is_leaf": true,
+      "size": 1,
+      "mean": 2.0039,
+      "min": 2.0039,
+      "max": 2.0039,
+      "variance": 0.0,
+      "candidate_splits": []
+    },
+    "aka_name cast_info name role_type title": {
+      "is_leaf": true,
+      "size": 1,
+      "mean": 2.2033,
+      "min": 2.2033,
+      "max": 2.2033,
+      "variance": 0.0,
+      "candidate_splits": []
+    },
+    "aka_name cast_info char_name name role_type title": {
+      "is_leaf": true,
+      "size": 1,
+      "mean": 2.4445,
+      "min": 2.4445,
+      "max": 2.4445,
+      "variance": 0.0,
+      "candidate_splits": []
+    },
+    "aka_name cast_info char_name movie_companies name role_type title": {
+      "is_leaf": true,
+      "size": 1,
+      "mean": 1.1671,
+      "min": 1.1671,
+      "max": 1.1671,
+      "variance": 0.0,
+      "candidate_splits": []
+    },
+    "aka_name cast_info char_name company_name movie_companies name role_type title": {
+      "is_leaf": true,
+      "size": 1,
+      "mean": 1.1965,
+      "min": 1.1965,
+      "max": 1.1965,
+      "variance": 0.0,
+      "candidate_splits": []
+    },
+    "keyword movie_keyword": {
+      "is_leaf": false,
+      "split_condition": "[Filter column] filter on column k.keyword",
+      "split_type": "FilterColAction",
+      "size": 27,
+      "mean": 5.4844,
+      "variance": 2.8409,
+      "left": {
+        "is_leaf": true,
+        "size": 12,
+        "mean": 6.2018,
+        "min": 2.7082,
+        "max": 7.7624,
+        "variance": 3.0902,
+        "candidate_splits": [
+          {
+            "condition": "[Filter value] predicate k.keyword = computer-animation",
+            "left_size": 2,
+            "right_size": 10,
+            "score": 0.1667
+          },
+          {
+            "condition": "[Filter value] predicate k.keyword = sequel",
+            "left_size": 4,
+            "right_size": 8,
+            "score": 0.3333
+          }
+        ]
+      },
+      "right": {
+        "is_leaf": true,
+        "size": 15,
+        "mean": 4.9106,
+        "min": 2.2625,
+        "max": 6.2332,
+        "variance": 1.9006,
+        "candidate_splits": []
+      }
+    },
+    "keyword movie_keyword title": {
+      "is_leaf": false,
+      "split_condition": "[Filter column] filter on column k.keyword",
+      "split_type": "FilterColAction",
+      "size": 23,
+      "mean": 4.8796,
+      "variance": 3.7283,
+      "left": {
+        "is_leaf": true,
+        "size": 10,
+        "mean": 5.5725,
+        "min": 0.6931,
+        "max": 7.9789,
+        "variance": 4.3729,
+        "candidate_splits": [
+          {
+            "condition": "[Filter value] predicate k.keyword = marvel-cinematic-universe",
+            "left_size": 1,
+            "right_size": 9,
+            "score": 0.1
+          },
+          {
+            "condition": "[Filter value] predicate k.keyword = computer-animation",
+            "left_size": 1,
+            "right_size": 9,
+            "score": 0.1
+          },
+          {
+            "condition": "[Filter value] predicate k.keyword = sequel",
+            "left_size": 4,
+            "right_size": 6,
+            "score": 0.4
+          },
+          {
+            "condition": "[Filter column] filter on column t.production_year",
+            "left_size": 6,
+            "right_size": 4,
+            "score": 0.6
+          },
+          {
+            "condition": "[Filter column] filter on column t.episode_nr",
+            "left_size": 2,
+            "right_size": 8,
+            "score": 0.2
+          }
+        ]
+      },
+      "right": {
+        "is_leaf": true,
+        "size": 13,
+        "mean": 4.3467,
+        "min": 1.2738,
+        "max": 6.2132,
+        "variance": 2.5792,
+        "candidate_splits": [
+          {
+            "condition": "[Filter value] predicate t.production_year > 2005.0",
+            "left_size": 4,
+            "right_size": 9,
+            "score": 0.3077
+          },
+          {
+            "condition": "[Filter value] predicate t.production_year > 2000.0",
+            "left_size": 4,
+            "right_size": 9,
+            "score": 0.3077
+          },
+          {
+            "condition": "[Filter value] predicate t.production_year > 2009.0",
+            "left_size": 1,
+            "right_size": 12,
+            "score": 0.0769
+          },
+          {
+            "condition": "[Filter value] predicate t.production_year > 1990.0",
+            "left_size": 1,
+            "right_size": 12,
+            "score": 0.0769
+          },
+          {
+            "condition": "[Filter value] predicate t.production_year > 2010.0",
+            "left_size": 2,
+            "right_size": 11,
+            "score": 0.1538
+          }
+        ]
+      }
+    },
+    "keyword kind_type movie_keyword title": {
+      "is_leaf": true,
+      "size": 5,
+      "mean": 5.6185,
+      "min": 4.9289,
+      "max": 5.8753,
+      "variance": 0.1232,
+      "candidate_splits": [
+        {
+          "condition": "[Filter value] predicate t.production_year > 2009.0",
+          "left_size": 1,
+          "right_size": 4,
+          "score": 0.2
+        },
+        {
+          "condition": "[Filter column] filter on column kt.kind",
+          "left_size": 1,
+          "right_size": 4,
+          "score": 0.2
+        },
+        {
+          "condition": "[Filter value] predicate t.production_year > 2005.0",
+          "left_size": 3,
+          "right_size": 2,
+          "score": 0.6
+        }
+      ]
+    },
+    "keyword kind_type movie_companies movie_keyword title": {
+      "is_leaf": true,
+      "size": 3,
+      "mean": 3.6579,
+      "min": 0.6279,
+      "max": 5.6071,
+      "variance": 4.7162,
+      "candidate_splits": [
+        {
+          "condition": "[Filter value] predicate t.production_year > 2009.0",
+          "left_size": 1,
+          "right_size": 2,
+          "score": 0.3333
+        }
+      ]
+    },
+    "company_name keyword kind_type movie_companies movie_keyword title": {
+      "is_leaf": true,
+      "size": 2,
+      "mean": 5.4898,
+      "min": 5.1149,
+      "max": 5.8648,
+      "variance": 0.1406,
+      "candidate_splits": []
+    },
+    "company_name company_type keyword kind_type movie_companies movie_keyword title": {
+      "is_leaf": true,
+      "size": 3,
+      "mean": 3.8771,
+      "min": 0.651,
+      "max": 5.8521,
+      "variance": 5.2912,
+      "candidate_splits": [
+        {
+          "condition": "[Filter value] predicate t.production_year > 2009.0",
+          "left_size": 1,
+          "right_size": 2,
+          "score": 0.3333
+        }
+      ]
+    },
+    "company_name company_type keyword kind_type movie_companies movie_info_idx movie_keyword title": {
+      "is_leaf": true,
+      "size": 2,
+      "mean": 4.4695,
+      "min": 4.1124,
+      "max": 4.8266,
+      "variance": 0.1275,
+      "candidate_splits": [
+        {
+          "condition": "[Join key] Join Key = mc.movie_id_mi_idx.movie_id",
+          "left_size": 1,
+          "right_size": 1,
+          "score": 0.5
+        }
+      ]
+    },
+    "company_name company_type info_type keyword kind_type movie_companies movie_info_idx movie_keyword title": {
+      "is_leaf": true,
+      "size": 2,
+      "mean": 4.5182,
+      "min": 4.1942,
+      "max": 4.8422,
+      "variance": 0.105,
+      "candidate_splits": [
+        {
+          "condition": "[Join key] Join Key = mi_idx.movie_id_t.id",
+          "left_size": 1,
+          "right_size": 1,
+          "score": 0.5
+        },
+        {
+          "condition": "[Join key] Join Key = mc.movie_id_t.id",
+          "left_size": 1,
+          "right_size": 1,
+          "score": 0.5
+        }
+      ]
+    },
+    "company_name company_type info_type keyword kind_type movie_companies movie_info movie_info_idx movie_keyword title": {
+      "is_leaf": true,
+      "size": 6,
+      "mean": 2.4923,
+      "min": 2.1049,
+      "max": 2.8761,
+      "variance": 0.1319,
+      "candidate_splits": [
+        {
+          "condition": "[Join key] Join Key = it1.id_mi.info_type_id",
+          "left_size": 4,
+          "right_size": 2,
+          "score": 0.6667
+        },
+        {
+          "condition": "[Join key] Join Key = mi_idx.movie_id_t.id",
+          "left_size": 3,
+          "right_size": 3,
+          "score": 0.5
+        },
+        {
+          "condition": "[Filter column] filter on column it1.info",
+          "left_size": 4,
+          "right_size": 2,
+          "score": 0.6667
+        },
+        {
+          "condition": "[Join key] Join Key = mc.movie_id_mi.movie_id",
+          "left_size": 4,
+          "right_size": 2,
+          "score": 0.6667
+        },
+        {
+          "condition": "[Join key] Join Key = mc.movie_id_t.id",
+          "left_size": 3,
+          "right_size": 3,
+          "score": 0.5
+        },
+        {
+          "condition": "[Join key] Join Key = mi.movie_id_mi_idx.movie_id",
+          "left_size": 2,
+          "right_size": 4,
+          "score": 0.3333
+        }
+      ]
+    },
+    "cast_info keyword movie_keyword title": {
+      "is_leaf": true,
+      "size": 5,
+      "mean": 4.3403,
+      "min": 1.6882,
+      "max": 5.5931,
+      "variance": 2.0481,
+      "candidate_splits": [
+        {
+          "condition": "[Filter column] filter on column k.keyword",
+          "left_size": 4,
+          "right_size": 1,
+          "score": 0.8
+        },
+        {
+          "condition": "[Filter column] filter on column t.production_year",
+          "left_size": 2,
+          "right_size": 3,
+          "score": 0.4
+        },
+        {
+          "condition": "[Filter column] filter on column t.episode_nr",
+          "left_size": 1,
+          "right_size": 4,
+          "score": 0.2
+        }
+      ]
+    },
+    "cast_info keyword movie_keyword name title": {
+      "is_leaf": true,
+      "size": 9,
+      "mean": 3.3761,
+      "min": 0.6931,
+      "max": 6.0657,
+      "variance": 4.2935,
+      "candidate_splits": [
+        {
+          "condition": "[Filter column] filter on column t.production_year",
+          "left_size": 5,
+          "right_size": 4,
+          "score": 0.5556
+        },
+        {
+          "condition": "[Filter column] filter on column t.episode_nr",
+          "left_size": 1,
+          "right_size": 8,
+          "score": 0.1111
+        },
+        {
+          "condition": "[Filter column] filter on column k.keyword",
+          "left_size": 8,
+          "right_size": 1,
+          "score": 0.8889
+        },
+        {
+          "condition": "[Filter column] filter on column n.gender",
+          "left_size": 1,
+          "right_size": 8,
+          "score": 0.1111
+        }
+      ]
+    },
+    "aka_name cast_info keyword movie_keyword name title": {
+      "is_leaf": true,
+      "size": 2,
+      "mean": 3.6863,
+      "min": 3.226,
+      "max": 4.1465,
+      "variance": 0.2118,
+      "candidate_splits": [
+        {
+          "condition": "[Filter column] filter on column t.episode_nr",
+          "left_size": 1,
+          "right_size": 1,
+          "score": 0.5
+        }
+      ]
+    },
+    "aka_name cast_info keyword movie_companies movie_keyword name title": {
+      "is_leaf": true,
+      "size": 1,
+      "mean": 2.0313,
+      "min": 2.0313,
+      "max": 2.0313,
+      "variance": 0.0,
+      "candidate_splits": []
+    },
+    "aka_name cast_info company_name keyword movie_companies movie_keyword name title": {
+      "is_leaf": true,
+      "size": 4,
+      "mean": 1.608,
+      "min": 0.9753,
+      "max": 2.2407,
+      "variance": 0.4003,
+      "candidate_splits": [
+        {
+          "condition": "[Filter column] filter on column t.episode_nr",
+          "left_size": 2,
+          "right_size": 2,
+          "score": 0.5
+        }
+      ]
+    },
+    "keyword movie_info_idx movie_keyword title": {
+      "is_leaf": true,
+      "size": 3,
+      "mean": 3.8459,
+      "min": 1.6403,
+      "max": 4.9488,
+      "variance": 2.4324,
+      "candidate_splits": [
+        {
+          "condition": "[Filter column] filter on column mi_idx.info",
+          "left_size": 1,
+          "right_size": 2,
+          "score": 0.3333
+        },
+        {
+          "condition": "[Filter value] predicate t.production_year > 2000.0",
+          "left_size": 2,
+          "right_size": 1,
+          "score": 0.6667
+        }
+      ]
+    },
+    "info_type keyword movie_info_idx movie_keyword title": {
+      "is_leaf": true,
+      "size": 3,
+      "mean": 2.7246,
+      "min": 1.628,
+      "max": 4.9177,
+      "variance": 2.4048,
+      "candidate_splits": [
+        {
+          "condition": "[Join key] Join Key = it.id_mi_idx.info_type_id",
+          "left_size": 2,
+          "right_size": 1,
+          "score": 0.6667
+        },
+        {
+          "condition": "[Filter column] filter on column it2.info",
+          "left_size": 1,
+          "right_size": 2,
+          "score": 0.3333
+        },
+        {
+          "condition": "[Filter column] filter on column it.info",
+          "left_size": 2,
+          "right_size": 1,
+          "score": 0.6667
+        },
+        {
+          "condition": "[Filter value] predicate t.production_year > 2005.0",
+          "left_size": 1,
+          "right_size": 2,
+          "score": 0.3333
+        },
+        {
+          "condition": "[Filter value] predicate mi_idx.info > 8.0",
+          "left_size": 1,
+          "right_size": 2,
+          "score": 0.3333
+        },
+        {
+          "condition": "[Join key] Join Key = it2.id_mi_idx.info_type_id",
+          "left_size": 1,
+          "right_size": 2,
+          "score": 0.3333
+        }
+      ]
+    },
+    "cast_info keyword movie_companies movie_keyword name title": {
+      "is_leaf": true,
+      "size": 2,
+      "mean": 3.7143,
+      "min": 3.6293,
+      "max": 3.7994,
+      "variance": 0.0072,
+      "candidate_splits": []
+    },
+    "cast_info company_name keyword movie_companies movie_keyword name title": {
+      "is_leaf": true,
+      "size": 4,
+      "mean": 3.7911,
+      "min": 3.6951,
+      "max": 3.8872,
+      "variance": 0.0092,
+      "candidate_splits": [
+        {
+          "condition": "[Filter column] filter on column cn.country_code",
+          "left_size": 2,
+          "right_size": 2,
+          "score": 0.5
+        },
+        {
+          "condition": "[Join key] Join Key = ci.movie_id_mc.movie_id",
+          "left_size": 2,
+          "right_size": 2,
+          "score": 0.5
+        }
+      ]
+    },
+    "cast_info": {
+      "is_leaf": true,
+      "size": 1,
+      "mean": 0.4131,
+      "min": 0.4131,
+      "max": 0.4131,
+      "variance": 0.0,
+      "candidate_splits": []
+    },
+    "cast_info name role_type": {
+      "is_leaf": true,
+      "size": 1,
+      "mean": 0.6424,
+      "min": 0.6424,
+      "max": 0.6424,
+      "variance": 0.0,
+      "candidate_splits": []
+    },
+    "cast_info char_name name role_type": {
+      "is_leaf": true,
+      "size": 1,
+      "mean": 0.7732,
+      "min": 0.7732,
+      "max": 0.7732,
+      "variance": 0.0,
+      "candidate_splits": []
+    },
+    "cast_info char_name name role_type title": {
+      "is_leaf": true,
+      "size": 1,
+      "mean": 0.7918,
+      "min": 0.7918,
+      "max": 0.7918,
+      "variance": 0.0,
+      "candidate_splits": []
+    },
+    "company_name": {
+      "is_leaf": true,
+      "size": 1,
+      "mean": 0.7429,
+      "min": 0.7429,
+      "max": 0.7429,
+      "variance": 0.0,
+      "candidate_splits": []
+    },
+    "company_name movie_companies": {
+      "is_leaf": true,
+      "size": 3,
+      "mean": 2.0875,
+      "min": 0.288,
+      "max": 5.6276,
+      "variance": 6.2669,
+      "candidate_splits": [
+        {
+          "condition": "[Filter column] filter on column cn.name",
+          "left_size": 1,
+          "right_size": 2,
+          "score": 0.3333
+        },
+        {
+          "condition": "[Join key] Join Key = cn.id_mc.company_id",
+          "left_size": 2,
+          "right_size": 1,
+          "score": 0.6667
+        },
+        {
+          "condition": "[Join key] Join Key = _",
+          "left_size": 1,
+          "right_size": 2,
+          "score": 0.3333
+        }
+      ]
+    },
+    "aka_title company_name movie_companies": {
+      "is_leaf": true,
+      "size": 1,
+      "mean": 3.2958,
+      "min": 3.2958,
+      "max": 3.2958,
+      "variance": 0.0,
+      "candidate_splits": []
+    },
+    "aka_title company_name company_type movie_companies": {
+      "is_leaf": true,
+      "size": 1,
+      "mean": 3.2958,
+      "min": 3.2958,
+      "max": 3.2958,
+      "variance": 0.0,
+      "candidate_splits": []
+    },
+    "aka_title company_name company_type movie_companies title": {
+      "is_leaf": true,
+      "size": 1,
+      "mean": 3.2581,
+      "min": 3.2581,
+      "max": 3.2581,
+      "variance": 0.0,
+      "candidate_splits": []
+    },
+    "aka_title company_name company_type movie_companies movie_info title": {
+      "is_leaf": true,
+      "size": 1,
+      "mean": 1.0986,
+      "min": 1.0986,
+      "max": 1.0986,
+      "variance": 0.0,
+      "candidate_splits": []
+    },
+    "aka_title company_name company_type info_type movie_companies movie_info title": {
+      "is_leaf": true,
+      "size": 1,
+      "mean": 1.0986,
+      "min": 1.0986,
+      "max": 1.0986,
+      "variance": 0.0,
+      "candidate_splits": []
+    },
+    "aka_title company_name company_type info_type movie_companies movie_info movie_keyword title": {
+      "is_leaf": true,
+      "size": 1,
+      "mean": 3.6109,
+      "min": 3.6109,
+      "max": 3.6109,
+      "variance": 0.0,
+      "candidate_splits": []
+    },
+    "aka_title company_name company_type info_type keyword movie_companies movie_info movie_keyword title": {
+      "is_leaf": true,
+      "size": 2,
+      "mean": 3.6109,
+      "min": 3.6109,
+      "max": 3.6109,
+      "variance": 0.0,
+      "candidate_splits": []
+    },
+    "complete_cast keyword movie_keyword title": {
+      "is_leaf": true,
+      "size": 3,
+      "mean": 2.999,
+      "min": 1.264,
+      "max": 4.2767,
+      "variance": 1.6173,
+      "candidate_splits": [
+        {
+          "condition": "[Filter column] filter on column k.keyword",
+          "left_size": 2,
+          "right_size": 1,
+          "score": 0.6667
+        },
+        {
+          "condition": "[Filter op] predicate t.production_year >",
+          "left_size": 1,
+          "right_size": 2,
+          "score": 0.3333
+        },
+        {
+          "condition": "[Filter op] predicate t.production_year =",
+          "left_size": 1,
+          "right_size": 2,
+          "score": 0.3333
+        },
+        {
+          "condition": "[Filter op] predicate t.production_year <=",
+          "left_size": 1,
+          "right_size": 2,
+          "score": 0.3333
+        },
+        {
+          "condition": "[Filter op] predicate t.production_year >=",
+          "left_size": 1,
+          "right_size": 2,
+          "score": 0.3333
+        }
+      ]
+    },
+    "comp_cast_type complete_cast keyword movie_keyword title": {
+      "is_leaf": true,
+      "size": 4,
+      "mean": 3.4304,
+      "min": 1.8066,
+      "max": 4.2767,
+      "variance": 0.9144,
+      "candidate_splits": [
+        {
+          "condition": "[Filter op] predicate t.production_year >",
+          "left_size": 1,
+          "right_size": 3,
+          "score": 0.25
+        },
+        {
+          "condition": "[Filter op] predicate t.production_year <=",
+          "left_size": 1,
+          "right_size": 3,
+          "score": 0.25
+        },
+        {
+          "condition": "[Filter op] predicate t.production_year =",
+          "left_size": 2,
+          "right_size": 2,
+          "score": 0.5
+        },
+        {
+          "condition": "[Join key] Join Key = cc.status_id_cct2.id",
+          "left_size": 2,
+          "right_size": 2,
+          "score": 0.5
+        },
+        {
+          "condition": "[Join key] Join Key = k.id_mk.keyword_id",
+          "left_size": 1,
+          "right_size": 3,
+          "score": 0.25
+        },
+        {
+          "condition": "[Filter op] predicate t.production_year >=",
+          "left_size": 1,
+          "right_size": 3,
+          "score": 0.25
+        },
+        {
+          "condition": "[Join key] Join Key = cc.subject_id_cct1.id",
+          "left_size": 2,
+          "right_size": 2,
+          "score": 0.5
+        },
+        {
+          "condition": "[Filter column] filter on column k.keyword",
+          "left_size": 3,
+          "right_size": 1,
+          "score": 0.75
+        },
+        {
+          "condition": "[Filter column] filter on column cct2.kind",
+          "left_size": 3,
+          "right_size": 1,
+          "score": 0.75
+        }
+      ]
+    },
+    "cast_info comp_cast_type complete_cast keyword movie_keyword title": {
+      "is_leaf": true,
+      "size": 1,
+      "mean": 4.0396,
+      "min": 4.0396,
+      "max": 4.0396,
+      "variance": 0.0,
+      "candidate_splits": []
+    },
+    "cast_info comp_cast_type complete_cast keyword movie_keyword name title": {
+      "is_leaf": true,
+      "size": 1,
+      "mean": 1.3863,
+      "min": 1.3863,
+      "max": 1.3863,
+      "variance": 0.0,
+      "candidate_splits": []
+    },
+    "cast_info char_name comp_cast_type complete_cast keyword movie_keyword name title": {
+      "is_leaf": true,
+      "size": 1,
+      "mean": 1.0986,
+      "min": 1.0986,
+      "max": 1.0986,
+      "variance": 0.0,
+      "candidate_splits": []
+    },
+    "cast_info char_name comp_cast_type complete_cast keyword movie_info movie_keyword name title": {
+      "is_leaf": true,
+      "size": 1,
+      "mean": 2.0794,
+      "min": 2.0794,
+      "max": 2.0794,
+      "variance": 0.0,
+      "candidate_splits": []
+    },
+    "cast_info char_name comp_cast_type complete_cast info_type keyword movie_info movie_keyword name title": {
+      "is_leaf": true,
+      "size": 1,
+      "mean": 2.0794,
+      "min": 2.0794,
+      "max": 2.0794,
+      "variance": 0.0,
+      "candidate_splits": []
+    },
+    "cast_info char_name comp_cast_type complete_cast info_type keyword movie_info movie_keyword name person_info title": {
+      "is_leaf": true,
+      "size": 2,
+      "mean": 7.2098,
+      "min": 6.5013,
+      "max": 7.9183,
+      "variance": 0.502,
+      "candidate_splits": [
+        {
+          "condition": "[Join key] Join Key = ci.movie_id_t.id",
+          "left_size": 1,
+          "right_size": 1,
+          "score": 0.5
+        },
+        {
+          "condition": "[Filter column] filter on column it3.info",
+          "left_size": 1,
+          "right_size": 1,
+          "score": 0.5
+        },
+        {
+          "condition": "[Join key] Join Key = cc.movie_id_ci.movie_id",
+          "left_size": 1,
+          "right_size": 1,
+          "score": 0.5
+        },
+        {
+          "condition": "[Join key] Join Key = ci.person_id_n.id",
+          "left_size": 1,
+          "right_size": 1,
+          "score": 0.5
+        },
+        {
+          "condition": "[Join key] Join Key = it3.id_pi.info_type_id",
+          "left_size": 1,
+          "right_size": 1,
+          "score": 0.5
+        },
+        {
+          "condition": "[Join key] Join Key = cc.status_id_cct2.id",
+          "left_size": 1,
+          "right_size": 1,
+          "score": 0.5
+        }
+      ]
+    },
+    "cast_info char_name comp_cast_type complete_cast info_type keyword movie_companies movie_info movie_keyword name person_info title": {
+      "is_leaf": true,
+      "size": 1,
+      "mean": 9.2042,
+      "min": 9.2042,
+      "max": 9.2042,
+      "variance": 0.0,
+      "candidate_splits": []
+    },
+    "cast_info char_name comp_cast_type complete_cast info_type keyword movie_companies movie_info movie_keyword name person_info role_type title": {
+      "is_leaf": true,
+      "size": 1,
+      "mean": 9.7628,
+      "min": 9.7628,
+      "max": 9.7628,
+      "variance": 0.0,
+      "candidate_splits": []
+    },
+    "cast_info char_name comp_cast_type company_name complete_cast info_type keyword movie_companies movie_info movie_keyword name person_info role_type title": {
+      "is_leaf": true,
+      "size": 2,
+      "mean": 8.2485,
+      "min": 8.2485,
+      "max": 8.2485,
+      "variance": 0.0,
+      "candidate_splits": [
+        {
+          "condition": "[Join key] Join Key = ci.movie_id_mi.movie_id",
+          "left_size": 1,
+          "right_size": 1,
+          "score": 0.5
+        },
+        {
+          "condition": "[Join key] Join Key = cc.subject_id_cct1.id",
+          "left_size": 1,
+          "right_size": 1,
+          "score": 0.5
+        },
+        {
+          "condition": "[Join key] Join Key = ci.movie_id_mc.movie_id",
+          "left_size": 1,
+          "right_size": 1,
+          "score": 0.5
+        },
+        {
+          "condition": "[Filter column] filter on column cct1.kind",
+          "left_size": 1,
+          "right_size": 1,
+          "score": 0.5
+        },
+        {
+          "condition": "[Join key] Join Key = ci.role_id_rt.id",
+          "left_size": 1,
+          "right_size": 1,
+          "score": 0.5
+        },
+        {
+          "condition": "[Join key] Join Key = mc.movie_id_mi.movie_id",
+          "left_size": 1,
+          "right_size": 1,
+          "score": 0.5
+        },
+        {
+          "condition": "[Join key] Join Key = it3.id_pi.info_type_id",
+          "left_size": 1,
+          "right_size": 1,
+          "score": 0.5
+        },
+        {
+          "condition": "[Join key] Join Key = it.id_mi.info_type_id",
+          "left_size": 1,
+          "right_size": 1,
+          "score": 0.5
+        }
+      ]
+    },
+    "aka_name cast_info char_name comp_cast_type company_name complete_cast info_type keyword movie_companies movie_info movie_keyword name person_info role_type title": {
+      "is_leaf": true,
+      "size": 4,
+      "mean": 7.1875,
+      "min": 6.9848,
+      "max": 7.3902,
+      "variance": 0.0411,
+      "candidate_splits": [
+        {
+          "condition": "[Join key] Join Key = ci.movie_id_mc.movie_id",
+          "left_size": 2,
+          "right_size": 2,
+          "score": 0.5
+        },
+        {
+          "condition": "[Filter column] filter on column t.title",
+          "left_size": 2,
+          "right_size": 2,
+          "score": 0.5
+        },
+        {
+          "condition": "[Join key] Join Key = cc.movie_id_mk.movie_id",
+          "left_size": 2,
+          "right_size": 2,
+          "score": 0.5
+        },
+        {
+          "condition": "[Filter column] filter on column chn.name",
+          "left_size": 2,
+          "right_size": 2,
+          "score": 0.5
+        }
+      ]
+    },
+    "cast_info name role_type title": {
+      "is_leaf": true,
+      "size": 1,
+      "mean": 0.2841,
+      "min": 0.2841,
+      "max": 0.2841,
+      "variance": 0.0,
+      "candidate_splits": []
+    },
+    "info_type kind_type link_type movie_info_idx movie_link title": {
+      "is_leaf": true,
+      "size": 3,
+      "mean": 1.5755,
+      "min": 1.4533,
+      "max": 1.7918,
+      "variance": 0.0235,
+      "candidate_splits": [
+        {
+          "condition": "[Filter column] filter on column kt1.kind",
+          "left_size": 1,
+          "right_size": 2,
+          "score": 0.3333
+        }
+      ]
+    },
+    "info_type kind_type link_type movie_companies movie_info_idx movie_link title": {
+      "is_leaf": true,
+      "size": 1,
+      "mean": 2.7081,
+      "min": 2.7081,
+      "max": 2.7081,
+      "variance": 0.0,
+      "candidate_splits": []
+    },
+    "company_name info_type kind_type link_type movie_companies movie_info_idx movie_link title": {
+      "is_leaf": true,
+      "size": 2,
+      "mean": 0.6931,
+      "min": 0.6931,
+      "max": 0.6931,
+      "variance": 0.0,
+      "candidate_splits": [
+        {
+          "condition": "[Filter column] filter on column it1.info",
+          "left_size": 1,
+          "right_size": 1,
+          "score": 0.5
+        }
+      ]
+    },
+    "cast_info keyword movie_keyword": {
+      "is_leaf": true,
+      "size": 1,
+      "mean": 5.5798,
+      "min": 5.5798,
+      "max": 5.5798,
+      "variance": 0.0,
+      "candidate_splits": []
+    },
+    "cast_info keyword movie_keyword name": {
+      "is_leaf": true,
+      "size": 1,
+      "mean": 6.1361,
+      "min": 6.1361,
+      "max": 6.1361,
+      "variance": 0.0,
+      "candidate_splits": []
+    },
+    "info_type movie_companies movie_info_idx": {
+      "is_leaf": true,
+      "size": 1,
+      "mean": 0.3589,
+      "min": 0.3589,
+      "max": 0.3589,
+      "variance": 0.0,
+      "candidate_splits": []
+    },
+    "keyword movie_info movie_keyword title": {
+      "is_leaf": true,
+      "size": 2,
+      "mean": 3.569,
+      "min": 3.0978,
+      "max": 4.0401,
+      "variance": 0.222,
+      "candidate_splits": [
+        {
+          "condition": "[Filter value] predicate t.production_year <= 2010.0",
+          "left_size": 1,
+          "right_size": 1,
+          "score": 0.5
+        },
+        {
+          "condition": "[Filter value] predicate t.production_year >= 2000.0",
+          "left_size": 1,
+          "right_size": 1,
+          "score": 0.5
+        }
+      ]
+    },
+    "keyword movie_companies movie_info movie_keyword title": {
+      "is_leaf": true,
+      "size": 3,
+      "mean": 2.6651,
+      "min": 1.6364,
+      "max": 3.7842,
+      "variance": 0.7729,
+      "candidate_splits": [
+        {
+          "condition": "[Filter column] filter on column t.title",
+          "left_size": 1,
+          "right_size": 2,
+          "score": 0.3333
+        },
+        {
+          "condition": "[Filter value] predicate t.production_year <= 2010.0",
+          "left_size": 2,
+          "right_size": 1,
+          "score": 0.6667
+        },
+        {
+          "condition": "[Filter value] predicate k.keyword = sequel",
+          "left_size": 2,
+          "right_size": 1,
+          "score": 0.6667
+        },
+        {
+          "condition": "[Filter value] predicate t.production_year >= 2000.0",
+          "left_size": 2,
+          "right_size": 1,
+          "score": 0.6667
+        }
+      ]
+    },
+    "company_name keyword movie_companies movie_info movie_keyword title": {
+      "is_leaf": true,
+      "size": 2,
+      "mean": 2.0113,
+      "min": 1.343,
+      "max": 2.6796,
+      "variance": 0.4466,
+      "candidate_splits": [
+        {
+          "condition": "[Filter value] predicate t.production_year <= 2010.0",
+          "left_size": 1,
+          "right_size": 1,
+          "score": 0.5
+        },
+        {
+          "condition": "[Filter value] predicate t.production_year >= 2000.0",
+          "left_size": 1,
+          "right_size": 1,
+          "score": 0.5
+        }
+      ]
+    },
+    "company_name company_type keyword movie_companies movie_info movie_keyword title": {
+      "is_leaf": true,
+      "size": 2,
+      "mean": 1.9694,
+      "min": 1.329,
+      "max": 2.6099,
+      "variance": 0.4102,
+      "candidate_splits": [
+        {
+          "condition": "[Filter value] predicate t.production_year >= 2000.0",
+          "left_size": 1,
+          "right_size": 1,
+          "score": 0.5
+        },
+        {
+          "condition": "[Filter value] predicate t.production_year <= 2010.0",
+          "left_size": 1,
+          "right_size": 1,
+          "score": 0.5
+        }
+      ]
+    },
+    "keyword movie_info_idx movie_keyword": {
+      "is_leaf": true,
+      "size": 1,
+      "mean": 4.2025,
+      "min": 4.2025,
+      "max": 4.2025,
+      "variance": 0.0,
+      "candidate_splits": []
+    },
+    "info_type keyword movie_info_idx movie_keyword": {
+      "is_leaf": true,
+      "size": 1,
+      "mean": 4.4766,
+      "min": 4.4766,
+      "max": 4.4766,
+      "variance": 0.0,
+      "candidate_splits": []
+    },
+    "info_type keyword kind_type movie_info_idx movie_keyword title": {
+      "is_leaf": true,
+      "size": 1,
+      "mean": 3.434,
+      "min": 3.434,
+      "max": 3.434,
+      "variance": 0.0,
+      "candidate_splits": []
+    },
+    "complete_cast info_type keyword kind_type movie_info_idx movie_keyword title": {
+      "is_leaf": true,
+      "size": 1,
+      "mean": 1.8471,
+      "min": 1.8471,
+      "max": 1.8471,
+      "variance": 0.0,
+      "candidate_splits": []
+    },
+    "comp_cast_type complete_cast info_type keyword kind_type movie_info_idx movie_keyword title": {
+      "is_leaf": true,
+      "size": 2,
+      "mean": 2.2836,
+      "min": 1.6464,
+      "max": 2.9208,
+      "variance": 0.406,
+      "candidate_splits": [
+        {
+          "condition": "[Join key] Join Key = cc.movie_id_mk.movie_id",
+          "left_size": 1,
+          "right_size": 1,
+          "score": 0.5
+        },
+        {
+          "condition": "[Join key] Join Key = it2.id_mi_idx.info_type_id",
+          "left_size": 1,
+          "right_size": 1,
+          "score": 0.5
+        },
+        {
+          "condition": "[Join key] Join Key = cc.status_id_cct2.id",
+          "left_size": 1,
+          "right_size": 1,
+          "score": 0.5
+        },
+        {
+          "condition": "[Filter op] predicate mi_idx.info <",
+          "left_size": 1,
+          "right_size": 1,
+          "score": 0.5
+        },
+        {
+          "condition": "[Filter column] filter on column cct2.kind",
+          "left_size": 1,
+          "right_size": 1,
+          "score": 0.5
+        },
+        {
+          "condition": "[Filter op] predicate mi_idx.info >",
+          "left_size": 1,
+          "right_size": 1,
+          "score": 0.5
+        },
+        {
+          "condition": "[Filter column] filter on column kt.kind",
+          "left_size": 1,
+          "right_size": 1,
+          "score": 0.5
+        }
+      ]
+    },
+    "cast_info comp_cast_type complete_cast info_type keyword kind_type movie_info_idx movie_keyword title": {
+      "is_leaf": true,
+      "size": 1,
+      "mean": 2.4073,
+      "min": 2.4073,
+      "max": 2.4073,
+      "variance": 0.0,
+      "candidate_splits": []
+    },
+    "cast_info char_name comp_cast_type complete_cast info_type keyword kind_type movie_info_idx movie_keyword title": {
+      "is_leaf": true,
+      "size": 2,
+      "mean": 3.7966,
+      "min": 3.7834,
+      "max": 3.8098,
+      "variance": 0.0002,
+      "candidate_splits": [
+        {
+          "condition": "[Join key] Join Key = cc.subject_id_cct1.id",
+          "left_size": 1,
+          "right_size": 1,
+          "score": 0.5
+        },
+        {
+          "condition": "[Join key] Join Key = cc.movie_id_mi_idx.movie_id",
+          "left_size": 1,
+          "right_size": 1,
+          "score": 0.5
+        },
+        {
+          "condition": "[Join key] Join Key = cc.status_id_cct2.id",
+          "left_size": 1,
+          "right_size": 1,
+          "score": 0.5
+        },
+        {
+          "condition": "[Join key] Join Key = it2.id_mi_idx.info_type_id",
+          "left_size": 1,
+          "right_size": 1,
+          "score": 0.5
+        }
+      ]
+    },
+    "cast_info char_name comp_cast_type complete_cast info_type keyword kind_type movie_info_idx movie_keyword name title": {
+      "is_leaf": true,
+      "size": 2,
+      "mean": 3.8121,
+      "min": 3.8121,
+      "max": 3.8121,
+      "variance": 0.0,
+      "candidate_splits": []
+    },
+    "complete_cast keyword movie_keyword": {
+      "is_leaf": true,
+      "size": 1,
+      "mean": 4.4993,
+      "min": 4.4993,
+      "max": 4.4993,
+      "variance": 0.0,
+      "candidate_splits": []
+    },
+    "comp_cast_type complete_cast keyword movie_keyword": {
+      "is_leaf": true,
+      "size": 2,
+      "mean": 5.2952,
+      "min": 5.2618,
+      "max": 5.3285,
+      "variance": 0.0011,
+      "candidate_splits": [
+        {
+          "condition": "[Join key] Join Key = k.id_mk.keyword_id",
+          "left_size": 1,
+          "right_size": 1,
+          "score": 0.5
+        },
+        {
+          "condition": "[Filter column] filter on column cct1.kind",
+          "left_size": 1,
+          "right_size": 1,
+          "score": 0.5
+        },
+        {
+          "condition": "[Join key] Join Key = cc.subject_id_cct1.id",
+          "left_size": 1,
+          "right_size": 1,
+          "score": 0.5
+        }
+      ]
+    },
+    "comp_cast_type complete_cast keyword movie_info movie_keyword": {
+      "is_leaf": true,
+      "size": 1,
+      "mean": 5.7144,
+      "min": 5.7144,
+      "max": 5.7144,
+      "variance": 0.0,
+      "candidate_splits": []
+    },
+    "comp_cast_type complete_cast info_type keyword movie_info movie_keyword": {
+      "is_leaf": true,
+      "size": 1,
+      "mean": 5.5011,
+      "min": 5.5011,
+      "max": 5.5011,
+      "variance": 0.0,
+      "candidate_splits": []
+    },
+    "cast_info comp_cast_type complete_cast info_type keyword movie_info movie_keyword": {
+      "is_leaf": true,
+      "size": 1,
+      "mean": 4.4299,
+      "min": 4.4299,
+      "max": 4.4299,
+      "variance": 0.0,
+      "candidate_splits": []
+    },
+    "cast_info comp_cast_type complete_cast info_type keyword movie_info movie_keyword name": {
+      "is_leaf": true,
+      "size": 1,
+      "mean": 4.6537,
+      "min": 4.6537,
+      "max": 4.6537,
+      "variance": 0.0,
+      "candidate_splits": []
+    },
+    "cast_info comp_cast_type complete_cast info_type keyword movie_info movie_info_idx movie_keyword name": {
+      "is_leaf": true,
+      "size": 2,
+      "mean": 4.5644,
+      "min": 4.5632,
+      "max": 4.5656,
+      "variance": 0.0,
+      "candidate_splits": [
+        {
+          "condition": "[Join key] Join Key = ci.movie_id_mi.movie_id",
+          "left_size": 1,
+          "right_size": 1,
+          "score": 0.5
+        },
+        {
+          "condition": "[Filter column] filter on column it2.info",
+          "left_size": 1,
+          "right_size": 1,
+          "score": 0.5
+        },
+        {
+          "condition": "[Join key] Join Key = cc.movie_id_mi.movie_id",
+          "left_size": 1,
+          "right_size": 1,
+          "score": 0.5
+        }
+      ]
+    },
+    "cast_info comp_cast_type complete_cast info_type keyword movie_info movie_info_idx movie_keyword name title": {
+      "is_leaf": true,
+      "size": 7,
+      "mean": 3.842,
+      "min": 3.3322,
+      "max": 4.4905,
+      "variance": 0.1982,
+      "candidate_splits": [
+        {
+          "condition": "[Filter column] filter on column t.production_year",
+          "left_size": 5,
+          "right_size": 2,
+          "score": 0.7143
+        },
+        {
+          "condition": "[Filter column] filter on column cct1.kind",
+          "left_size": 2,
+          "right_size": 5,
+          "score": 0.2857
+        },
+        {
+          "condition": "[Join key] Join Key = it2.id_mi_idx.info_type_id",
+          "left_size": 4,
+          "right_size": 3,
+          "score": 0.5714
+        },
+        {
+          "condition": "[Join key] Join Key = cc.movie_id_t.id",
+          "left_size": 4,
+          "right_size": 3,
+          "score": 0.5714
+        },
+        {
+          "condition": "[Filter column] filter on column it2.info",
+          "left_size": 6,
+          "right_size": 1,
+          "score": 0.8571
+        },
+        {
+          "condition": "[Join key] Join Key = cc.movie_id_mi.movie_id",
+          "left_size": 1,
+          "right_size": 6,
+          "score": 0.1429
+        },
+        {
+          "condition": "[Join key] Join Key = ci.movie_id_t.id",
+          "left_size": 2,
+          "right_size": 5,
+          "score": 0.2857
+        },
+        {
+          "condition": "[Join key] Join Key = ci.movie_id_mi.movie_id",
+          "left_size": 6,
+          "right_size": 1,
+          "score": 0.8571
+        },
+        {
+          "condition": "[Join key] Join Key = cc.movie_id_mk.movie_id",
+          "left_size": 2,
+          "right_size": 5,
+          "score": 0.2857
+        }
+      ]
+    },
+    "info_type movie_info_idx title": {
+      "is_leaf": true,
+      "size": 1,
+      "mean": 0.6931,
+      "min": 0.6931,
+      "max": 0.6931,
+      "variance": 0.0,
+      "candidate_splits": []
+    },
+    "info_type movie_info movie_info_idx title": {
+      "is_leaf": true,
+      "size": 2,
+      "mean": 1.8513,
+      "min": 0.6931,
+      "max": 3.0095,
+      "variance": 1.3414,
+      "candidate_splits": [
+        {
+          "condition": "[Filter column] filter on column it1.info",
+          "left_size": 1,
+          "right_size": 1,
+          "score": 0.5
+        },
+        {
+          "condition": "[Join key] Join Key = it1.id_mi.info_type_id",
+          "left_size": 1,
+          "right_size": 1,
+          "score": 0.5
+        }
+      ]
+    },
+    "info_type movie_companies movie_info movie_info_idx title": {
+      "is_leaf": true,
+      "size": 1,
+      "mean": 3.1367,
+      "min": 3.1367,
+      "max": 3.1367,
+      "variance": 0.0,
+      "candidate_splits": []
+    },
+    "company_name info_type movie_companies movie_info movie_info_idx title": {
+      "is_leaf": true,
+      "size": 1,
+      "mean": 2.3026,
+      "min": 2.3026,
+      "max": 2.3026,
+      "variance": 0.0,
+      "candidate_splits": []
+    },
+    "company_name company_type info_type movie_companies movie_info movie_info_idx title": {
+      "is_leaf": true,
+      "size": 2,
+      "mean": 2.3026,
+      "min": 2.3026,
+      "max": 2.3026,
+      "variance": 0.0,
+      "candidate_splits": []
+    },
+    "company_type movie_companies title": {
+      "is_leaf": true,
+      "size": 1,
+      "mean": 0.5254,
+      "min": 0.5254,
+      "max": 0.5254,
+      "variance": 0.0,
+      "candidate_splits": []
+    },
+    "comp_cast_type complete_cast keyword movie_info movie_keyword title": {
+      "is_leaf": true,
+      "size": 3,
+      "mean": 3.7799,
+      "min": 2.5649,
+      "max": 4.3899,
+      "variance": 0.7381,
+      "candidate_splits": [
+        {
+          "condition": "[Filter column] filter on column k.keyword",
+          "left_size": 1,
+          "right_size": 2,
+          "score": 0.3333
+        },
+        {
+          "condition": "[Join key] Join Key = cc.subject_id_cct1.id",
+          "left_size": 2,
+          "right_size": 1,
+          "score": 0.6667
+        },
+        {
+          "condition": "[Join key] Join Key = mi.movie_id_mk.movie_id",
+          "left_size": 2,
+          "right_size": 1,
+          "score": 0.6667
+        },
+        {
+          "condition": "[Filter op] predicate t.production_year >",
+          "left_size": 2,
+          "right_size": 1,
+          "score": 0.6667
+        },
+        {
+          "condition": "[Filter value] predicate cct2.kind = complete+verified",
+          "left_size": 2,
+          "right_size": 1,
+          "score": 0.6667
+        },
+        {
+          "condition": "[Filter op] predicate t.production_year =",
+          "left_size": 1,
+          "right_size": 2,
+          "score": 0.3333
+        }
+      ]
+    },
+    "comp_cast_type complete_cast info_type keyword movie_info movie_keyword title": {
+      "is_leaf": true,
+      "size": 1,
+      "mean": 4.392,
+      "min": 4.392,
+      "max": 4.392,
+      "variance": 0.0,
+      "candidate_splits": []
+    },
+    "cast_info comp_cast_type complete_cast info_type keyword movie_info movie_keyword title": {
+      "is_leaf": true,
+      "size": 1,
+      "mean": 3.4645,
+      "min": 3.4645,
+      "max": 3.4645,
+      "variance": 0.0,
+      "candidate_splits": []
+    },
+    "cast_info comp_cast_type complete_cast info_type keyword movie_info movie_keyword name title": {
+      "is_leaf": true,
+      "size": 1,
+      "mean": 3.8253,
+      "min": 3.8253,
+      "max": 3.8253,
+      "variance": 0.0,
+      "candidate_splits": []
+    },
+    "company_name company_type complete_cast keyword movie_companies movie_info movie_keyword title": {
+      "is_leaf": true,
+      "size": 1,
+      "mean": 2.3459,
+      "min": 2.3459,
+      "max": 2.3459,
+      "variance": 0.0,
+      "candidate_splits": []
+    },
+    "comp_cast_type company_name company_type complete_cast keyword movie_companies movie_info movie_keyword title": {
+      "is_leaf": true,
+      "size": 3,
+      "mean": 2.4118,
+      "min": 2.2948,
+      "max": 2.6425,
+      "variance": 0.0266,
+      "candidate_splits": [
+        {
+          "condition": "[Join key] Join Key = mc.movie_id_mi.movie_id",
+          "left_size": 2,
+          "right_size": 1,
+          "score": 0.6667
+        },
+        {
+          "condition": "[Join key] Join Key = cc.subject_id_cct1.id",
+          "left_size": 2,
+          "right_size": 1,
+          "score": 0.6667
+        },
+        {
+          "condition": "[Filter op] predicate t.production_year <=",
+          "left_size": 2,
+          "right_size": 1,
+          "score": 0.6667
+        },
+        {
+          "condition": "[Join key] Join Key = ct.id_mc.company_type_id",
+          "left_size": 1,
+          "right_size": 2,
+          "score": 0.3333
+        },
+        {
+          "condition": "[Filter op] predicate t.production_year >=",
+          "left_size": 2,
+          "right_size": 1,
+          "score": 0.6667
+        },
+        {
+          "condition": "[Filter op] predicate t.production_year =",
+          "left_size": 1,
+          "right_size": 2,
+          "score": 0.3333
+        }
+      ]
+    },
+    "comp_cast_type company_name company_type complete_cast keyword link_type movie_companies movie_info movie_keyword movie_link title": {
+      "is_leaf": true,
+      "size": 4,
+      "mean": 2.8759,
+      "min": 1.6417,
+      "max": 4.11,
+      "variance": 1.5231,
+      "candidate_splits": [
+        {
+          "condition": "[Filter op] predicate t.production_year >=",
+          "left_size": 2,
+          "right_size": 2,
+          "score": 0.5
+        },
+        {
+          "condition": "[Filter op] predicate t.production_year =",
+          "left_size": 2,
+          "right_size": 2,
+          "score": 0.5
+        },
+        {
+          "condition": "[Filter op] predicate t.production_year <=",
+          "left_size": 2,
+          "right_size": 2,
+          "score": 0.5
+        }
+      ]
+    },
+    "keyword movie_companies movie_keyword title": {
+      "is_leaf": true,
+      "size": 4,
+      "mean": 3.1551,
+      "min": 0.7086,
+      "max": 4.7896,
+      "variance": 2.3572,
+      "candidate_splits": [
+        {
+          "condition": "[Filter column] filter on column t.episode_nr",
+          "left_size": 1,
+          "right_size": 3,
+          "score": 0.25
+        },
+        {
+          "condition": "[Filter column] filter on column k.keyword",
+          "left_size": 3,
+          "right_size": 1,
+          "score": 0.75
+        },
+        {
+          "condition": "[Filter column] filter on column t.title",
+          "left_size": 1,
+          "right_size": 3,
+          "score": 0.25
+        },
+        {
+          "condition": "[Filter column] filter on column t.production_year",
+          "left_size": 3,
+          "right_size": 1,
+          "score": 0.75
+        }
+      ]
+    },
+    "company_name keyword movie_companies movie_keyword title": {
+      "is_leaf": true,
+      "size": 4,
+      "mean": 3.8424,
+      "min": 1.0032,
+      "max": 5.4998,
+      "variance": 3.4453,
+      "candidate_splits": [
+        {
+          "condition": "[Filter value] predicate k.keyword = sequel",
+          "left_size": 1,
+          "right_size": 3,
+          "score": 0.25
+        },
+        {
+          "condition": "[Filter op] predicate cn.country_code =",
+          "left_size": 3,
+          "right_size": 1,
+          "score": 0.75
+        },
+        {
+          "condition": "[Filter column] filter on column t.production_year",
+          "left_size": 1,
+          "right_size": 3,
+          "score": 0.25
+        },
+        {
+          "condition": "[Filter column] filter on column t.episode_nr",
+          "left_size": 1,
+          "right_size": 3,
+          "score": 0.25
+        },
+        {
+          "condition": "[Filter op] predicate cn.country_code <>",
+          "left_size": 1,
+          "right_size": 3,
+          "score": 0.25
+        }
+      ]
+    },
+    "company_name company_type keyword movie_companies movie_keyword title": {
+      "is_leaf": true,
+      "size": 2,
+      "mean": 4.3803,
+      "min": 3.2706,
+      "max": 5.4899,
+      "variance": 1.2313,
+      "candidate_splits": [
+        {
+          "condition": "[Filter op] predicate ct.kind =",
+          "left_size": 1,
+          "right_size": 1,
+          "score": 0.5
+        },
+        {
+          "condition": "[Filter op] predicate ct.kind <>",
+          "left_size": 1,
+          "right_size": 1,
+          "score": 0.5
+        },
+        {
+          "condition": "[Filter op] predicate t.production_year <=",
+          "left_size": 1,
+          "right_size": 1,
+          "score": 0.5
+        },
+        {
+          "condition": "[Filter column] filter on column k.keyword",
+          "left_size": 1,
+          "right_size": 1,
+          "score": 0.5
+        },
+        {
+          "condition": "[Filter op] predicate t.production_year >=",
+          "left_size": 1,
+          "right_size": 1,
+          "score": 0.5
+        },
+        {
+          "condition": "[Filter op] predicate t.production_year >",
+          "left_size": 1,
+          "right_size": 1,
+          "score": 0.5
+        }
+      ]
+    },
+    "company_name company_type keyword link_type movie_companies movie_keyword movie_link title": {
+      "is_leaf": true,
+      "size": 4,
+      "mean": 0.5744,
+      "min": 0.5036,
+      "max": 0.6453,
+      "variance": 0.005,
+      "candidate_splits": [
+        {
+          "condition": "[Filter op] predicate t.production_year >=",
+          "left_size": 2,
+          "right_size": 2,
+          "score": 0.5
+        },
+        {
+          "condition": "[Filter op] predicate ct.kind <>",
+          "left_size": 2,
+          "right_size": 2,
+          "score": 0.5
+        },
+        {
+          "condition": "[Filter column] filter on column k.keyword",
+          "left_size": 2,
+          "right_size": 2,
+          "score": 0.5
+        },
+        {
+          "condition": "[Filter op] predicate t.production_year >",
+          "left_size": 2,
+          "right_size": 2,
+          "score": 0.5
+        },
+        {
+          "condition": "[Filter op] predicate t.production_year <=",
+          "left_size": 2,
+          "right_size": 2,
+          "score": 0.5
+        },
+        {
+          "condition": "[Filter op] predicate ct.kind =",
+          "left_size": 2,
+          "right_size": 2,
+          "score": 0.5
+        }
+      ]
+    },
+    "complete_cast keyword movie_companies movie_info movie_keyword title": {
+      "is_leaf": true,
+      "size": 1,
+      "mean": 3.7842,
+      "min": 3.7842,
+      "max": 3.7842,
+      "variance": 0.0,
+      "candidate_splits": []
+    },
+    "cast_info complete_cast keyword movie_companies movie_info movie_keyword title": {
+      "is_leaf": true,
+      "size": 1,
+      "mean": 7.4218,
+      "min": 7.4218,
+      "max": 7.4218,
+      "variance": 0.0,
+      "candidate_splits": []
+    },
+    "cast_info char_name complete_cast keyword movie_companies movie_info movie_keyword title": {
+      "is_leaf": true,
+      "size": 1,
+      "mean": 3.7842,
+      "min": 3.7842,
+      "max": 3.7842,
+      "variance": 0.0,
+      "candidate_splits": []
+    },
+    "cast_info char_name complete_cast keyword movie_companies movie_info movie_keyword person_info title": {
+      "is_leaf": true,
+      "size": 1,
+      "mean": 8.8779,
+      "min": 8.8779,
+      "max": 8.8779,
+      "variance": 0.0,
+      "candidate_splits": []
+    },
+    "aka_name cast_info char_name complete_cast keyword movie_companies movie_info movie_keyword person_info title": {
+      "is_leaf": true,
+      "size": 1,
+      "mean": 9.9766,
+      "min": 9.9766,
+      "max": 9.9766,
+      "variance": 0.0,
+      "candidate_splits": []
+    },
+    "aka_name cast_info char_name comp_cast_type complete_cast keyword movie_companies movie_info movie_keyword person_info title": {
+      "is_leaf": true,
+      "size": 2,
+      "mean": 9.9766,
+      "min": 9.9766,
+      "max": 9.9766,
+      "variance": 0.0,
+      "candidate_splits": [
+        {
+          "condition": "[Filter column] filter on column cct2.kind",
+          "left_size": 1,
+          "right_size": 1,
+          "score": 0.5
+        },
+        {
+          "condition": "[Join key] Join Key = cc.status_id_cct2.id",
+          "left_size": 1,
+          "right_size": 1,
+          "score": 0.5
+        }
+      ]
+    },
+    "aka_name cast_info char_name comp_cast_type company_name complete_cast keyword movie_companies movie_info movie_keyword person_info title": {
+      "is_leaf": true,
+      "size": 1,
+      "mean": 8.4949,
+      "min": 8.4949,
+      "max": 8.4949,
+      "variance": 0.0,
+      "candidate_splits": []
+    },
+    "aka_name cast_info char_name comp_cast_type company_name complete_cast info_type keyword movie_companies movie_info movie_keyword person_info title": {
+      "is_leaf": true,
+      "size": 1,
+      "mean": 8.4949,
+      "min": 8.4949,
+      "max": 8.4949,
+      "variance": 0.0,
+      "candidate_splits": []
+    },
+    "aka_name cast_info char_name comp_cast_type company_name complete_cast info_type keyword movie_companies movie_info movie_keyword name person_info title": {
+      "is_leaf": true,
+      "size": 2,
+      "mean": 7.9426,
+      "min": 7.3902,
+      "max": 8.4949,
+      "variance": 0.3051,
+      "candidate_splits": [
+        {
+          "condition": "[Filter column] filter on column it3.info",
+          "left_size": 1,
+          "right_size": 1,
+          "score": 0.5
+        }
+      ]
+    },
+    "cast_info keyword movie_info_idx movie_keyword title": {
+      "is_leaf": true,
+      "size": 1,
+      "mean": 5.3095,
+      "min": 5.3095,
+      "max": 5.3095,
+      "variance": 0.0,
+      "candidate_splits": []
+    },
+    "cast_info keyword movie_companies movie_info_idx movie_keyword title": {
+      "is_leaf": true,
+      "size": 1,
+      "mean": 5.8777,
+      "min": 5.8777,
+      "max": 5.8777,
+      "variance": 0.0,
+      "candidate_splits": []
+    },
+    "cast_info company_name keyword movie_companies movie_info_idx movie_keyword title": {
+      "is_leaf": true,
+      "size": 1,
+      "mean": 5.0689,
+      "min": 5.0689,
+      "max": 5.0689,
+      "variance": 0.0,
+      "candidate_splits": []
+    },
+    "cast_info company_name keyword movie_companies movie_info movie_info_idx movie_keyword title": {
+      "is_leaf": true,
+      "size": 1,
+      "mean": 5.5294,
+      "min": 5.5294,
+      "max": 5.5294,
+      "variance": 0.0,
+      "candidate_splits": []
+    },
+    "cast_info company_name info_type keyword movie_companies movie_info movie_info_idx movie_keyword title": {
+      "is_leaf": true,
+      "size": 2,
+      "mean": 4.9801,
+      "min": 4.4308,
+      "max": 5.5294,
+      "variance": 0.3017,
+      "candidate_splits": [
+        {
+          "condition": "[Filter column] filter on column it2.info",
+          "left_size": 1,
+          "right_size": 1,
+          "score": 0.5
+        },
+        {
+          "condition": "[Join key] Join Key = it2.id_mi_idx.info_type_id",
+          "left_size": 1,
+          "right_size": 1,
+          "score": 0.5
+        }
+      ]
+    },
+    "cast_info company_name info_type keyword movie_companies movie_info movie_info_idx movie_keyword name title": {
+      "is_leaf": true,
+      "size": 2,
+      "mean": 4.4308,
+      "min": 4.4308,
+      "max": 4.4308,
+      "variance": 0.0,
+      "candidate_splits": []
+    },
+    "keyword movie_companies movie_keyword": {
+      "is_leaf": true,
+      "size": 1,
+      "mean": 5.4947,
+      "min": 5.4947,
+      "max": 5.4947,
+      "variance": 0.0,
+      "candidate_splits": []
+    },
+    "company_name keyword movie_companies movie_keyword": {
+      "is_leaf": true,
+      "size": 1,
+      "mean": 5.614,
+      "min": 5.614,
+      "max": 5.614,
+      "variance": 0.0,
+      "candidate_splits": []
+    },
+    "company_type keyword kind_type movie_companies movie_keyword title": {
+      "is_leaf": true,
+      "size": 1,
+      "mean": 0.6456,
+      "min": 0.6456,
+      "max": 0.6456,
+      "variance": 0.0,
+      "candidate_splits": []
+    },
+    "cast_info char_name keyword movie_keyword name title": {
+      "is_leaf": true,
+      "size": 1,
+      "mean": 3.3673,
+      "min": 3.3673,
+      "max": 3.3673,
+      "variance": 0.0,
+      "candidate_splits": []
+    },
+    "cast_info char_name keyword movie_keyword name role_type title": {
+      "is_leaf": true,
+      "size": 1,
+      "mean": 3.3673,
+      "min": 3.3673,
+      "max": 3.3673,
+      "variance": 0.0,
+      "candidate_splits": []
+    },
+    "cast_info char_name keyword movie_info movie_keyword name role_type title": {
+      "is_leaf": true,
+      "size": 1,
+      "mean": 3.4395,
+      "min": 3.4395,
+      "max": 3.4395,
+      "variance": 0.0,
+      "candidate_splits": []
+    },
+    "cast_info char_name info_type keyword movie_info movie_keyword name role_type title": {
+      "is_leaf": true,
+      "size": 1,
+      "mean": 3.5835,
+      "min": 3.5835,
+      "max": 3.5835,
+      "variance": 0.0,
+      "candidate_splits": []
+    },
+    "cast_info char_name info_type keyword movie_companies movie_info movie_keyword name role_type title": {
+      "is_leaf": true,
+      "size": 1,
+      "mean": 2.7769,
+      "min": 2.7769,
+      "max": 2.7769,
+      "variance": 0.0,
+      "candidate_splits": []
+    },
+    "cast_info char_name company_name info_type keyword movie_companies movie_info movie_keyword name role_type title": {
+      "is_leaf": true,
+      "size": 1,
+      "mean": 3.1475,
+      "min": 3.1475,
+      "max": 3.1475,
+      "variance": 0.0,
+      "candidate_splits": []
+    },
+    "aka_name cast_info char_name company_name info_type keyword movie_companies movie_info movie_keyword name role_type title": {
+      "is_leaf": true,
+      "size": 2,
+      "mean": 2.4944,
+      "min": 2.4944,
+      "max": 2.4944,
+      "variance": 0.0,
+      "candidate_splits": []
+    },
+    "comp_cast_type complete_cast keyword movie_companies movie_info movie_keyword title": {
+      "is_leaf": true,
+      "size": 1,
+      "mean": 1.8184,
+      "min": 1.8184,
+      "max": 1.8184,
+      "variance": 0.0,
+      "candidate_splits": []
+    },
+    "comp_cast_type company_name complete_cast keyword movie_companies movie_info movie_keyword title": {
+      "is_leaf": true,
+      "size": 1,
+      "mean": 2.5934,
+      "min": 2.5934,
+      "max": 2.5934,
+      "variance": 0.0,
+      "candidate_splits": []
+    },
+    "comp_cast_type company_name company_type complete_cast keyword movie_companies movie_info movie_keyword movie_link title": {
+      "is_leaf": true,
+      "size": 1,
+      "mean": 2.3153,
+      "min": 2.3153,
+      "max": 2.3153,
+      "variance": 0.0,
+      "candidate_splits": []
+    },
+    "cast_info keyword kind_type movie_keyword title": {
+      "is_leaf": true,
+      "size": 1,
+      "mean": 3.9172,
+      "min": 3.9172,
+      "max": 3.9172,
+      "variance": 0.0,
+      "candidate_splits": []
+    },
+    "cast_info keyword kind_type movie_keyword name title": {
+      "is_leaf": true,
+      "size": 1,
+      "mean": 4.1271,
+      "min": 4.1271,
+      "max": 4.1271,
+      "variance": 0.0,
+      "candidate_splits": []
+    },
+    "cast_info complete_cast keyword kind_type movie_keyword name title": {
+      "is_leaf": true,
+      "size": 1,
+      "mean": 3.4012,
+      "min": 3.4012,
+      "max": 3.4012,
+      "variance": 0.0,
+      "candidate_splits": []
+    },
+    "cast_info comp_cast_type complete_cast keyword kind_type movie_keyword name title": {
+      "is_leaf": true,
+      "size": 2,
+      "mean": 3.2958,
+      "min": 3.2958,
+      "max": 3.2958,
+      "variance": 0.0,
+      "candidate_splits": [
+        {
+          "condition": "[Join key] Join Key = cc.movie_id_mk.movie_id",
+          "left_size": 1,
+          "right_size": 1,
+          "score": 0.5
+        },
+        {
+          "condition": "[Join key] Join Key = cc.status_id_cct2.id",
+          "left_size": 1,
+          "right_size": 1,
+          "score": 0.5
+        },
+        {
+          "condition": "[Join key] Join Key = cc.subject_id_cct1.id",
+          "left_size": 1,
+          "right_size": 1,
+          "score": 0.5
+        }
+      ]
+    },
+    "cast_info char_name comp_cast_type complete_cast keyword kind_type movie_keyword name title": {
+      "is_leaf": true,
+      "size": 2,
+      "mean": 2.8332,
+      "min": 2.8332,
+      "max": 2.8332,
+      "variance": 0.0,
+      "candidate_splits": []
+    },
+    "complete_cast keyword movie_info_idx movie_keyword title": {
+      "is_leaf": true,
+      "size": 1,
+      "mean": 4.6821,
+      "min": 4.6821,
+      "max": 4.6821,
+      "variance": 0.0,
+      "candidate_splits": []
+    },
+    "comp_cast_type complete_cast keyword movie_info_idx movie_keyword title": {
+      "is_leaf": true,
+      "size": 2,
+      "mean": 3.9301,
+      "min": 3.1781,
+      "max": 4.6821,
+      "variance": 0.5656,
+      "candidate_splits": [
+        {
+          "condition": "[Join key] Join Key = cc.status_id_cct2.id",
+          "left_size": 1,
+          "right_size": 1,
+          "score": 0.5
+        },
+        {
+          "condition": "[Filter column] filter on column cct2.kind",
+          "left_size": 1,
+          "right_size": 1,
+          "score": 0.5
+        }
+      ]
+    },
+    "cast_info comp_cast_type complete_cast keyword movie_info_idx movie_keyword title": {
+      "is_leaf": true,
+      "size": 1,
+      "mean": 4.0943,
+      "min": 4.0943,
+      "max": 4.0943,
+      "variance": 0.0,
+      "candidate_splits": []
+    },
+    "cast_info comp_cast_type complete_cast keyword movie_info movie_info_idx movie_keyword title": {
+      "is_leaf": true,
+      "size": 1,
+      "mean": 4.4308,
+      "min": 4.4308,
+      "max": 4.4308,
+      "variance": 0.0,
+      "candidate_splits": []
+    },
+    "cast_info comp_cast_type complete_cast info_type keyword movie_info movie_info_idx movie_keyword title": {
+      "is_leaf": true,
+      "size": 2,
+      "mean": 3.8815,
+      "min": 3.3322,
+      "max": 4.4308,
+      "variance": 0.3017,
+      "candidate_splits": [
+        {
+          "condition": "[Filter column] filter on column it2.info",
+          "left_size": 1,
+          "right_size": 1,
+          "score": 0.5
+        },
+        {
+          "condition": "[Join key] Join Key = it2.id_mi_idx.info_type_id",
+          "left_size": 1,
+          "right_size": 1,
+          "score": 0.5
+        },
+        {
+          "condition": "[Join key] Join Key = cc.movie_id_t.id",
+          "left_size": 1,
+          "right_size": 1,
+          "score": 0.5
+        }
+      ]
+    },
+    "company_name movie_companies title": {
+      "is_leaf": true,
+      "size": 1,
+      "mean": 0.2091,
+      "min": 0.2091,
+      "max": 0.2091,
+      "variance": 0.0,
+      "candidate_splits": []
+    },
+    "company_type keyword movie_companies movie_keyword title": {
+      "is_leaf": true,
+      "size": 1,
+      "mean": 5.2905,
+      "min": 5.2905,
+      "max": 5.2905,
+      "variance": 0.0,
+      "candidate_splits": []
+    },
+    "company_name company_type keyword movie_companies movie_keyword movie_link title": {
+      "is_leaf": true,
+      "size": 1,
+      "mean": 0.5609,
+      "min": 0.5609,
+      "max": 0.5609,
+      "variance": 0.0,
+      "candidate_splits": []
+    },
+    "cast_info name": {
+      "is_leaf": true,
+      "size": 1,
+      "mean": 4.0273,
+      "min": 4.0273,
+      "max": 4.0273,
+      "variance": 0.0,
+      "candidate_splits": []
+    },
+    "cast_info movie_info name": {
+      "is_leaf": true,
+      "size": 1,
+      "mean": 2.5174,
+      "min": 2.5174,
+      "max": 2.5174,
+      "variance": 0.0,
+      "candidate_splits": []
+    },
+    "cast_info info_type movie_info name": {
+      "is_leaf": true,
+      "size": 1,
+      "mean": 3.0072,
+      "min": 3.0072,
+      "max": 3.0072,
+      "variance": 0.0,
+      "candidate_splits": []
+    },
+    "cast_info info_type movie_info movie_info_idx name": {
+      "is_leaf": true,
+      "size": 2,
+      "mean": 2.3707,
+      "min": 2.3637,
+      "max": 2.3777,
+      "variance": 0.0,
+      "candidate_splits": [
+        {
+          "condition": "[Filter column] filter on column it2.info",
+          "left_size": 1,
+          "right_size": 1,
+          "score": 0.5
+        }
+      ]
+    },
+    "cast_info info_type movie_info movie_info_idx name title": {
+      "is_leaf": true,
+      "size": 2,
+      "mean": 2.2852,
+      "min": 2.2852,
+      "max": 2.2852,
+      "variance": 0.0,
+      "candidate_splits": []
+    },
+    "complete_cast keyword kind_type movie_keyword title": {
+      "is_leaf": true,
+      "size": 1,
+      "mean": 3.5928,
+      "min": 3.5928,
+      "max": 3.5928,
+      "variance": 0.0,
+      "candidate_splits": []
+    },
+    "comp_cast_type complete_cast keyword kind_type movie_keyword title": {
+      "is_leaf": true,
+      "size": 2,
+      "mean": 3.6662,
+      "min": 3.6175,
+      "max": 3.7149,
+      "variance": 0.0024,
+      "candidate_splits": [
+        {
+          "condition": "[Filter column] filter on column cct2.kind",
+          "left_size": 1,
+          "right_size": 1,
+          "score": 0.5
+        },
+        {
+          "condition": "[Join key] Join Key = cc.status_id_cct2.id",
+          "left_size": 1,
+          "right_size": 1,
+          "score": 0.5
+        }
+      ]
+    },
+    "comp_cast_type complete_cast keyword kind_type movie_info_idx movie_keyword title": {
+      "is_leaf": true,
+      "size": 1,
+      "mean": 2.9036,
+      "min": 2.9036,
+      "max": 2.9036,
+      "variance": 0.0,
+      "candidate_splits": []
+    },
+    "comp_cast_type complete_cast info_type keyword kind_type movie_companies movie_info_idx movie_keyword title": {
+      "is_leaf": true,
+      "size": 1,
+      "mean": 4.1915,
+      "min": 4.1915,
+      "max": 4.1915,
+      "variance": 0.0,
+      "candidate_splits": []
+    },
+    "comp_cast_type company_name complete_cast info_type keyword kind_type movie_companies movie_info_idx movie_keyword title": {
+      "is_leaf": true,
+      "size": 1,
+      "mean": 4.677,
+      "min": 4.677,
+      "max": 4.677,
+      "variance": 0.0,
+      "candidate_splits": []
+    },
+    "comp_cast_type company_name company_type complete_cast info_type keyword kind_type movie_companies movie_info_idx movie_keyword title": {
+      "is_leaf": true,
+      "size": 1,
+      "mean": 4.7017,
+      "min": 4.7017,
+      "max": 4.7017,
+      "variance": 0.0,
+      "candidate_splits": []
+    },
+    "comp_cast_type company_name company_type complete_cast info_type keyword kind_type movie_companies movie_info movie_info_idx movie_keyword title": {
+      "is_leaf": true,
+      "size": 3,
+      "mean": 2.683,
+      "min": 2.6746,
+      "max": 2.6998,
+      "variance": 0.0001,
+      "candidate_splits": [
+        {
+          "condition": "[Filter column] filter on column it1.info",
+          "left_size": 2,
+          "right_size": 1,
+          "score": 0.6667
+        }
+      ]
+    }
+  }
+}

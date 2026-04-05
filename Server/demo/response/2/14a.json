@@ -1,0 +1,404 @@
+{
+  "latency": 642.702,
+  "pgm_detail_rows": [],
+  "res_table": {
+    "col_type": [],
+    "rows": []
+  },
+  "tree": {
+    "Aggregate": {
+      "alias_key": "it1,it2,k,kt,mi,mi_idx,mk,t",
+      "children": {
+        "Nested Loop [it1,it2,k,kt,mi,mi_idx,mk,t]": {
+          "alias_key": "it1,it2,k,kt,mi,mi_idx,mk,t",
+          "children": {
+            "Seq Scan [it1]": {
+              "alias_key": "it1",
+              "children": {},
+              "time": 44000
+            },
+            "Nested Loop [it2,k,kt,mi,mi_idx,mk,t]": {
+              "alias_key": "it2,k,kt,mi,mi_idx,mk,t",
+              "children": {
+                "Nested Loop [it2,k,kt,mi_idx,mk,t]": {
+                  "alias_key": "it2,k,kt,mi_idx,mk,t",
+                  "children": {
+                    "Seq Scan [it2]": {
+                      "alias_key": "it2",
+                      "children": {},
+                      "time": 35000
+                    },
+                    "Nested Loop [k,kt,mi_idx,mk,t]": {
+                      "alias_key": "k,kt,mi_idx,mk,t",
+                      "children": {
+                        "Nested Loop [k,kt,mk,t]": {
+                          "alias_key": "k,kt,mk,t",
+                          "children": {
+                            "Nested Loop [k,mk,t]": {
+                              "alias_key": "k,mk,t",
+                              "children": {
+                                "Nested Loop [k,mk]": {
+                                  "alias_key": "k,mk",
+                                  "children": {
+                                    "Seq Scan [k]": {
+                                      "alias_key": "k",
+                                      "children": {},
+                                      "time": 57483000
+                                    },
+                                    "Bitmap Heap Scan [mk]": {
+                                      "alias_key": "mk",
+                                      "children": {},
+                                      "time": 31324000
+                                    }
+                                  },
+                                  "time": 162601000
+                                },
+                                "Index Scan [t]": {
+                                  "alias_key": "t",
+                                  "children": {},
+                                  "time": 8000
+                                }
+                              },
+                              "time": 494680000
+                            },
+                            "Index Scan [kt]": {
+                              "alias_key": "kt",
+                              "children": {},
+                              "time": 3000
+                            }
+                          },
+                          "time": 505770000
+                        },
+                        "Index Scan [mi_idx]": {
+                          "alias_key": "mi_idx",
+                          "children": {},
+                          "time": 10000
+                        }
+                      },
+                      "time": 527337000
+                    }
+                  },
+                  "time": 528304000
+                },
+                "Index Scan [mi]": {
+                  "alias_key": "mi",
+                  "children": {},
+                  "time": 98000
+                }
+              },
+              "time": 641609000
+            }
+          },
+          "time": 641999000
+        }
+      },
+      "time": 642422000
+    }
+  },
+  "cardinality_map": {
+    "it1,mi": {
+      "true_card": 614251.0,
+      "est_card": 614895.69
+    },
+    "it2,mi_idx": {
+      "true_card": 454230.0,
+      "est_card": 414029.44
+    },
+    "k,mk": {
+      "true_card": 37091.0,
+      "est_card": 105.99
+    },
+    "kt,t": {
+      "true_card": 98992.0,
+      "est_card": 175608.88
+    },
+    "mi,mi_idx": {
+      "true_card": 748009.0,
+      "est_card": 1838526.52
+    },
+    "mi,mk": {
+      "true_card": 4060930.0,
+      "est_card": 44900251.17
+    },
+    "mi,t": {
+      "true_card": 99589.0,
+      "est_card": 74591.25
+    },
+    "mi_idx,mk": {
+      "true_card": 10059327.0,
+      "est_card": 13895235.48
+    },
+    "mi_idx,t": {
+      "true_card": 126697.0,
+      "est_card": 163337.66
+    },
+    "mk,t": {
+      "true_card": 299534.0,
+      "est_card": 534259.96
+    },
+    "it1,mi,mi_idx": {
+      "true_card": 629486.0,
+      "est_card": 1723276.75
+    },
+    "it1,mi,mk": {
+      "true_card": 2892323.0,
+      "est_card": 41813658.21
+    },
+    "it1,mi,t": {
+      "true_card": 90826.0,
+      "est_card": 70075.91
+    },
+    "it2,mi,mi_idx": {
+      "true_card": 253194.0,
+      "est_card": 567011.97
+    },
+    "it2,mi_idx,mk": {
+      "true_card": 3403472.0,
+      "est_card": 4287618.14
+    },
+    "it2,mi_idx,t": {
+      "true_card": 42711.0,
+      "est_card": 50421.17
+    },
+    "k,mi,mk": {
+      "true_card": 34372.0,
+      "est_card": 1051.94
+    },
+    "k,mi_idx,mk": {
+      "true_card": 93893.0,
+      "est_card": 325.54
+    },
+    "k,mk,t": {
+      "true_card": 2582.0,
+      "est_card": 12.52
+    },
+    "kt,mi,t": {
+      "true_card": 60163.0,
+      "est_card": 37945.61
+    },
+    "kt,mi_idx,t": {
+      "true_card": 50900.0,
+      "est_card": 83092.16
+    },
+    "kt,mk,t": {
+      "true_card": 164339.0,
+      "est_card": 271785.54
+    },
+    "mi,mi_idx,mk": {
+      "true_card": 10112325.0,
+      "est_card": 232288080.33
+    },
+    "mi,mi_idx,t": {
+      "true_card": 59545.0,
+      "est_card": 296245.75
+    },
+    "mi,mk,t": {
+      "true_card": 199113.0,
+      "est_card": 7234873.65
+    },
+    "mi_idx,mk,t": {
+      "true_card": 516039.0,
+      "est_card": 2238969.25
+    },
+    "it1,it2,mi,mi_idx": {
+      "true_card": 213239.0,
+      "est_card": 536184.38
+    },
+    "it1,mi,mi_idx,mk": {
+      "true_card": 6817908.0,
+      "est_card": 217726883.22
+    },
+    "it1,mi,mi_idx,t": {
+      "true_card": 52270.0,
+      "est_card": 277675.3
+    },
+    "it1,k,mi,mk": {
+      "true_card": 23916.0,
+      "est_card": 979.62
+    },
+    "it1,mi,mk,t": {
+      "true_card": 175423.0,
+      "est_card": 6737524.68
+    },
+    "it1,kt,mi,t": {
+      "true_card": 55882.0,
+      "est_card": 35648.61
+    },
+    "it2,mi,mi_idx,mk": {
+      "true_card": 3351293.0,
+      "est_card": 71638960.85
+    },
+    "it2,mi,mi_idx,t": {
+      "true_card": 20004.0,
+      "est_card": 91363.86
+    },
+    "it2,k,mi_idx,mk": {
+      "true_card": 31800.0,
+      "est_card": 100.45
+    },
+    "it2,mi_idx,mk,t": {
+      "true_card": 171521.0,
+      "est_card": 690873.14
+    },
+    "it2,kt,mi_idx,t": {
+      "true_card": 17272.0,
+      "est_card": 25649.96
+    },
+    "k,mi,mi_idx,mk": {
+      "true_card": 92327.0,
+      "est_card": 3550.82
+    },
+    "k,mi,mk,t": {
+      "true_card": 1802.0,
+      "est_card": 169.5
+    },
+    "k,mi_idx,mk,t": {
+      "true_card": 4525.0,
+      "est_card": 52.46
+    },
+    "k,kt,mk,t": {
+      "true_card": 1966.0,
+      "est_card": 6.37
+    },
+    "kt,mi,mi_idx,t": {
+      "true_card": 29767.0,
+      "est_card": 128085.67
+    },
+    "kt,mi,mk,t": {
+      "true_card": 128014.0,
+      "est_card": 4794227.54
+    },
+    "kt,mi_idx,mk,t": {
+      "true_card": 322930.0,
+      "est_card": 10498254.45
+    },
+    "mi,mi_idx,mk,t": {
+      "true_card": 367382.0,
+      "est_card": 37429076.37
+    },
+    "it1,it2,mi,mi_idx,mk": {
+      "true_card": 2302523.0,
+      "est_card": 67744056.56
+    },
+    "it1,it2,mi,mi_idx,t": {
+      "true_card": 17514.0,
+      "est_card": 86396.54
+    },
+    "it1,k,mi,mi_idx,mk": {
+      "true_card": 62044.0,
+      "est_card": 5100.97
+    },
+    "it1,mi,mi_idx,mk,t": {
+      "true_card": 324423.0,
+      "est_card": 35082800.11
+    },
+    "it1,kt,mi,mi_idx,t": {
+      "true_card": 25867.0,
+      "est_card": 141257.31
+    },
+    "it1,k,mi,mk,t": {
+      "true_card": 1614.0,
+      "est_card": 157.85
+    },
+    "it1,kt,mi,mk,t": {
+      "true_card": 111264.0,
+      "est_card": 3427473.5
+    },
+    "it2,k,mi,mi_idx,mk": {
+      "true_card": 30642.0,
+      "est_card": 1678.38
+    },
+    "it2,mi,mi_idx,mk,t": {
+      "true_card": 122068.0,
+      "est_card": 11543340.18
+    },
+    "it2,kt,mi,mi_idx,t": {
+      "true_card": 10078.0,
+      "est_card": 46478.08
+    },
+    "it2,k,mi_idx,mk,t": {
+      "true_card": 1488.0,
+      "est_card": 16.19
+    },
+    "it2,kt,mi_idx,mk,t": {
+      "true_card": 109948.0,
+      "est_card": 351456.88
+    },
+    "k,mi,mi_idx,mk,t": {
+      "true_card": 3418.0,
+      "est_card": 572.15
+    },
+    "k,kt,mi,mk,t": {
+      "true_card": 1445.0,
+      "est_card": 86.23
+    },
+    "k,kt,mi_idx,mk,t": {
+      "true_card": 3380.0,
+      "est_card": 26.68
+    },
+    "kt,mi,mi_idx,mk,t": {
+      "true_card": 259956.0,
+      "est_card": 16182946.59
+    },
+    "it1,it2,k,mi,mi_idx,mk": {
+      "true_card": 20967.0,
+      "est_card": 1587.13
+    },
+    "it1,it2,mi,mi_idx,mk,t": {
+      "true_card": 107531.0,
+      "est_card": 10915745.29
+    },
+    "it1,it2,kt,mi,mi_idx,t": {
+      "true_card": 8746.0,
+      "est_card": 43951.13
+    },
+    "it1,k,mi,mi_idx,mk,t": {
+      "true_card": 2994.0,
+      "est_card": 821.93
+    },
+    "it1,kt,mi,mi_idx,mk,t": {
+      "true_card": 223599.0,
+      "est_card": 17847112.0
+    },
+    "it1,k,kt,mi,mk,t": {
+      "true_card": 1281.0,
+      "est_card": 80.3
+    },
+    "it2,k,mi,mi_idx,mk,t": {
+      "true_card": 1124.0,
+      "est_card": 270.44
+    },
+    "it2,kt,mi,mi_idx,mk,t": {
+      "true_card": 87997.0,
+      "est_card": 5872259.5
+    },
+    "it2,k,kt,mi_idx,mk,t": {
+      "true_card": 1147.0,
+      "est_card": 8.23
+    },
+    "k,kt,mi,mi_idx,mk,t": {
+      "true_card": 2613.0,
+      "est_card": 291.06
+    },
+    "it1,it2,k,mi,mi_idx,mk,t": {
+      "true_card": 985.0,
+      "est_card": 255.74
+    },
+    "it1,it2,kt,mi,mi_idx,mk,t": {
+      "true_card": 75669.0,
+      "est_card": 5552993.0
+    },
+    "it1,k,kt,mi,mi_idx,mk,t": {
+      "true_card": 2255.0,
+      "est_card": 418.13
+    },
+    "it2,k,kt,mi,mi_idx,mk,t": {
+      "true_card": 878.0,
+      "est_card": 137.58
+    },
+    "it1,it2,k,kt,mi,mi_idx,mk,t": {
+      "true_card": 761.0,
+      "est_card": 130.1
+    }
+  }
+}

@@ -1,0 +1,56 @@
+
+loader.entrypoint = "file:{{ gramine.libos }}"
+libos.entrypoint = "{{ execdir }}/build/demo"
+
+loader.log_level = "error"
+
+loader.insecure__use_cmdline_argv = true
+
+loader.env.LD_LIBRARY_PATH = "/lib:/lib/x86_64-linux-gnu"
+loader.env.PATH = "{{ execdir }}"
+# Set HOME to suppress "warning: cannot find home directory"
+loader.env.HOME = "/"
+# loader.env.MALLOC_ARENA_MAX = "1"
+sys.insecure__allow_eventfd = true
+
+fs.mounts = [
+  { path = "/lib", uri = "file:{{ gramine.runtimedir() }}" },
+  { path = "/lib/x86_64-linux-gnu", uri = "file:/lib/x86_64-linux-gnu" },
+  { path = "{{ execdir }}", uri = "file:{{ execdir }}" },
+  { path = "{{ execdir }}/data/", uri = "file:data/" },
+  { path = "{{ execdir }}/tables/", uri = "file:tables/" },
+  { path = "{{ execdir }}/communicate/", uri = "file:communicate/" },
+  { type = "untrusted_shm", path = "/dev/shm/", uri = "dev:/dev/shm/" }
+]
+
+# Unfortunately, non-SGX Gramine cannot use special keys such as "_sgx_mrenclave", so for this
+# example to work on both non-SGX and SGX versions we hardcode a dummy key. In SGX production case,
+# it is recommended to remove this insecure key and instead use "_sgx_mrenclave"/"_sgx_mrsigner".
+fs.insecure__keys.default = "ffeeddccbbaa99887766554433221100"
+
+sgx.debug = true
+sgx.profile.with_stack = true
+# sgx.profile.mode = "ocall_outer"
+sgx.edmm_enable = false
+sgx.enclave_size = "{{ enclave_size }}"
+sgx.max_threads = 1000
+sgx.use_exinfo = true
+sgx.insecure__allow_memfaults_without_exinfo = true
+# sgx.enable_stats = true
+sgx.preheat_enclave = true
+# sgx.insecure__rpc_thread_num = 64
+
+sgx.trusted_files = [
+  "file:{{ gramine.libos }}",
+  "file:{{ execdir }}/build/demo",
+  "file:{{ gramine.runtimedir() }}/",
+  "file:/lib/x86_64-linux-gnu/",
+]
+
+sgx.allowed_files = [
+  "dev:/dev/shm/",
+  "file:data/",
+  "file:tables/",
+  "file:key.bin",
+  "file:communicate/"
+]
