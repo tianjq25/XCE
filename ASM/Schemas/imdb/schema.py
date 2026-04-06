@@ -1,4 +1,4 @@
-from ASM.Schemas.graph_representation import SchemaGraph, Table
+from Schemas.graph_representation import SchemaGraph, Table
 
 def gen_imdb_schema(csv_path=""):
     """
