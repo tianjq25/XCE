@@ -159,9 +159,9 @@ class SQLCacheDB:
 
 if __name__ == "__main__":
     pass
-    # cache_db = SQLCacheDB(db_folder="Cache_DB", db_name="imdb_cache_old_dataset_update.db")
+    # cache_db = SQLCacheDB(db_folder="Cache_DB", db_name="imdb_cache_dataset.db")
     # selected_sqls = cache_db.get_selected_sqls()
     # # print(selected_sqls)
-    # with open("training_dataset_imdb_fixed_update.txt", "a") as f:
+    # with open("training_dataset_imdb.txt", "a") as f:
     #     for sql, repair_value in selected_sqls:
     #         f.write(f"{sql}#####{repair_value}\n")
