@@ -98,28 +98,30 @@ create database imdb;
 
 > **Acknowledgment:** The instructions and configurations in this section are closely referenced and adapted from the [ASM](https://github.com/postechdblab/ASM). We sincerely thank the original authors for their foundational work and excellent documentation.
 
+The ASM project is embedded as the `ASM/` subdirectory. All shell scripts within it use `cd "$(dirname "$0")"` to auto-locate the correct working directory, so they can be invoked from the project root.
+
 ### Generate Meta Model
 
-Use these scripts to generate a meta model for each dataset, which contains the schema information and global ordering of join keys. The meta models will be created in the "meta_models" directory (see inside the scripts). In addition, a directory will be created for each table in the "datasets", where each directory contains "table0.csv" that corresponds to the reordered table following the global order.
+Use these scripts to generate a meta model for each dataset, which contains the schema information and global ordering of join keys. The meta models will be created in the `ASM/meta_models` directory (see inside the scripts). In addition, a directory will be created for each table in `ASM/datasets`, where each directory contains "table0.csv" that corresponds to the reordered table following the global order.
 
 ```Bash
-bash generate_imdb_model.sh
+bash ASM/generate_imdb_model.sh
 ```
 
 ### Train AR Models
 
-Use these scripts to train the autoregressive (AR) models for each dataset. These models are trained over the reordered tables above. The AR models will be created in the "AR_models" directory (see inside the scripts). Furthermore, the AR models for the "*_type" tables of JOB and "site" table of Stack are dummies (not used in the estimation); following the implementation of FactorJoin (https://github.com/wuziniu/FactorJoin), we implement the per-table statistics estimation over the original table if the table has less than 1000 rows.
+Use these scripts to train the autoregressive (AR) models for each dataset. These models are trained over the reordered tables above. The AR models will be created in the `ASM/AR_models` directory (see inside the scripts). Furthermore, the AR models for the "*_type" tables of JOB and "site" table of Stack are dummies (not used in the estimation); following the implementation of FactorJoin (https://github.com/wuziniu/FactorJoin), we implement the per-table statistics estimation over the original table if the table has less than 1000 rows.
 
 ```Bash
-bash safe_generate_imdb_ar.sh
+bash ASM/safe_generate_imdb_ar.sh
 ```
 
 ### Estimate
 
-Use these scripts to estimate the cardinalities of sub-queries of all queries for each dataset. Each script requires the directories for the meta model and AR models (see inside the scripts). The query-wise results will be stored in the '_CE/result.<query_name>' (e.g., job_CE/result.29b).
+Use these scripts to estimate the cardinalities of sub-queries of all queries for each dataset. Each script requires the directories for the meta model and AR models (see inside the scripts). The query-wise results will be stored in `ASM/job_CE/result.<query_name>` (e.g., job_CE/result.29b).
 
 ```Bash
-bash evaluate_stats_ar.sh
+bash ASM/evaluate_imdb_ar.sh
 ```
 
 ## Workload Augmentation
