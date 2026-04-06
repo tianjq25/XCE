@@ -218,9 +218,9 @@ for table in IMDB_FULL['join_tables']:
 
     EXPERIMENT_CONFIGS[f'imdb-single-{table}']['eval_psamples'] = [2048]
     EXPERIMENT_CONFIGS[f'imdb-single-{table}']['dataset'] = 'imdb'
-    EXPERIMENT_CONFIGS[f'imdb-single-{table}']['data_dir'] = f'ASM/datasets/imdb/{table}/'
+    EXPERIMENT_CONFIGS[f'imdb-single-{table}']['data_dir'] = f'datasets/imdb/{table}/'
     EXPERIMENT_CONFIGS[f'imdb-single-{table}']['use_cols'] = None
-    EXPERIMENT_CONFIGS[f'imdb-single-{table}']['PK_tuples_np_loc'] = f'ASM/datasets/imdb/{table}/tuples_np.pkl'
+    EXPERIMENT_CONFIGS[f'imdb-single-{table}']['PK_tuples_np_loc'] = f'datasets/imdb/{table}/tuples_np.pkl'
     EXPERIMENT_CONFIGS[f'imdb-single-{table}']['subvar_dropout'] = True
     EXPERIMENT_CONFIGS[f'imdb-single-{table}']['adjust_fact_col'] = True
 
@@ -248,9 +248,9 @@ for table in ['account', 'answer', 'question', 'site', 'so_user', 'tag', 'tag_qu
     EXPERIMENT_CONFIGS[f'stack-single-{table}']['eval_psamples'] = [2048]
     EXPERIMENT_CONFIGS[f'stack-single-{table}']['dataset'] = 'stack'
 
-    EXPERIMENT_CONFIGS[f'stack-single-{table}']['data_dir'] = f'ASM/datasets/stack/{table}/'
+    EXPERIMENT_CONFIGS[f'stack-single-{table}']['data_dir'] = f'datasets/stack/{table}/'
     EXPERIMENT_CONFIGS[f'stack-single-{table}']['use_cols'] = None
-    EXPERIMENT_CONFIGS[f'stack-single-{table}']['PK_tuples_np_loc'] = f'ASM/datasets/stack/{table}/tuples_np.pkl'
+    EXPERIMENT_CONFIGS[f'stack-single-{table}']['PK_tuples_np_loc'] = f'datasets/stack/{table}/tuples_np.pkl'
     EXPERIMENT_CONFIGS[f'stack-single-{table}']['subvar_dropout'] = True
     EXPERIMENT_CONFIGS[f'stack-single-{table}']['adjust_fact_col'] = True
 
@@ -271,10 +271,10 @@ for table in ['badges', 'comments', 'postHistory', 'postLinks', 'posts', 'tags',
 
     EXPERIMENT_CONFIGS[f'stats-single-{table}']['eval_psamples'] = [2048]
     EXPERIMENT_CONFIGS[f'stats-single-{table}']['dataset'] = 'stats'
-    EXPERIMENT_CONFIGS[f'stats-single-{table}']['data_dir'] = f'ASM/datasets/stats/{table}/'
+    EXPERIMENT_CONFIGS[f'stats-single-{table}']['data_dir'] = f'datasets/stats/{table}/'
     EXPERIMENT_CONFIGS[f'stats-single-{table}']['use_cols'] = None
 
-    EXPERIMENT_CONFIGS[f'stats-single-{table}']['PK_tuples_np_loc'] = f'ASM/datasets/stats/{table}/tuples_np.pkl'
+    EXPERIMENT_CONFIGS[f'stats-single-{table}']['PK_tuples_np_loc'] = f'datasets/stats/{table}/tuples_np.pkl'
     EXPERIMENT_CONFIGS[f'stats-single-{table}']['subvar_dropout'] = True
     EXPERIMENT_CONFIGS[f'stats-single-{table}']['adjust_fact_col'] = True
 

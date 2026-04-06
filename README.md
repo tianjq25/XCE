@@ -98,8 +98,6 @@ create database imdb;
 
 > **Acknowledgment:** The instructions and configurations in this section are closely referenced and adapted from the [ASM](https://github.com/postechdblab/ASM). We sincerely thank the original authors for their foundational work and excellent documentation.
 
-The ASM project is embedded as the `ASM/` subdirectory. All shell scripts within it use `cd "$(dirname "$0")"` to auto-locate the correct working directory, so they can be invoked from the project root.
-
 ### Generate Meta Model
 
 Use these scripts to generate a meta model for each dataset, which contains the schema information and global ordering of join keys. The meta models will be created in the `ASM/meta_models` directory (see inside the scripts). In addition, a directory will be created for each table in `ASM/datasets`, where each directory contains "table0.csv" that corresponds to the reordered table following the global order.
