@@ -19,7 +19,7 @@ from ASM.AR.neurocard import NeuroCard
 
 def load_neurocard(dataset, table, ar_path, config_path):
 
-    config = EXPERIMENT_CONFIGS[config_path.format(dataset, table)]
+    config = dict(EXPERIMENT_CONFIGS[config_path.format(dataset, table)])
     config['__run'] = config['workload_name'] = config_path.format(dataset, table)
     if os.path.exists(ar_path.format(dataset, table)):
         print('table', table, 'updated')
@@ -31,6 +31,11 @@ def load_neurocard(dataset, table, ar_path, config_path):
     config['__gpu'] = 1
     config['__cpu'] = 1
     config['external'] = False
+
+    for key in ('data_dir', 'PK_tuples_np_loc', 'all_dvs_loc'):
+        if config.get(key) and not config[key].startswith('ASM/'):
+            config[key] = os.path.join('ASM', config[key])
+
     nc = NeuroCard(config)
 
     with open(f"{config['data_dir']}/min_count.pkl", "rb") as f:
